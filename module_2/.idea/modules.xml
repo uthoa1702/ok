@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/introduction_to_java/introduction_to_java.iml" filepath="$PROJECT_DIR$/introduction_to_java/introduction_to_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loop/loop.iml" filepath="$PROJECT_DIR$/loop/loop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mang va phuong thuc trong java/mang va phuong thuc trong java.iml" filepath="$PROJECT_DIR$/mang va phuong thuc trong java/mang va phuong thuc trong java.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_2.iml" filepath="$PROJECT_DIR$/module_2.iml" />
     </modules>
   </component>
