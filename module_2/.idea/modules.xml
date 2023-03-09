@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/OOP/Fan/Fan.iml" filepath="$PROJECT_DIR$/OOP/Fan/Fan.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP/QuadraticEquation/QuadraticEquation.iml" filepath="$PROJECT_DIR$/OOP/QuadraticEquation/QuadraticEquation.iml" />
       <module fileurl="file://$PROJECT_DIR$/OOP/StopWatch/StopWatch.iml" filepath="$PROJECT_DIR$/OOP/StopWatch/StopWatch.iml" />
       <module fileurl="file://$PROJECT_DIR$/introduction_to_java/introduction_to_java.iml" filepath="$PROJECT_DIR$/introduction_to_java/introduction_to_java.iml" />
       <module fileurl="file://$PROJECT_DIR$/loop/loop.iml" filepath="$PROJECT_DIR$/loop/loop.iml" />
