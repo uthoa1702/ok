@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class tim_min {
+public class TimMin {
     public static void main(String[] args) {
 
 

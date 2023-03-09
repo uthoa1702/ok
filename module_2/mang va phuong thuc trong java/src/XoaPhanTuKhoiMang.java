@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class xoa_phan_tu_khoi_mang {
+public class XoaPhanTuKhoiMang {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);

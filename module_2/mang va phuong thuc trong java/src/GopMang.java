@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class gop_mang {
+public class GopMang {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

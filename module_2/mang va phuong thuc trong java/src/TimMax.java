@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class tim_max {
+public class TimMax {
     public static void main(String[] args) {
 
 
