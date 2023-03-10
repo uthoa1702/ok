@@ -12,7 +12,6 @@ public class Main {
         System.out.println("enter class of student: ");
         b = sc.nextLine();
         Student student = new Student(a, b);
-
         System.out.println("Student{" +
                 "name='" + student.getName() + '\'' +
                 ", classes='" + student.getClasses() + '\'' +
