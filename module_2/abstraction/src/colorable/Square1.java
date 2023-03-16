@@ -1,7 +1,5 @@
 package colorable;
 
-import resizeable.Rectangle;
-
 public class Square1 extends Rectangle1 implements Colorable {
     public Square1() {
     }

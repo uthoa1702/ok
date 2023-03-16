@@ -1,7 +1,6 @@
 package colorable;
 
 import resizeable.Resizeable;
-import resizeable.Shape;
 
 public class Circle1 extends Shape1 implements Resizeable {
     private double radius = 1;

@@ -1,4 +1,3 @@
-import java.time.LocalTime;
 import java.util.Scanner;
 
 public class StopWatch {

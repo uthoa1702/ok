@@ -1,7 +1,5 @@
 package circle;
 
-import circle.Cylinder;
-
 import java.util.Scanner;
 
 public class Main {

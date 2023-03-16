@@ -1,7 +1,6 @@
 package colorable;
 
 import resizeable.Resizeable;
-import resizeable.Shape;
 
 public class Rectangle1 extends Shape1 implements Resizeable {
     protected double width = 1.0;
