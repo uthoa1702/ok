@@ -1,15 +1,17 @@
-package practice_using_arrayList_linkedList_in_java_collection_framework;
+package practice_using_arrayList_linkedList_in_java_collection_framework.model;
+
+import java.util.List;
 
 public class Product {
     int id;
     String name;
     String typeOfProduct;
-    double price;
+    int price;
 
     public Product() {
     }
 
-    public Product(int id, String name, String typeOfProduct, double price) {
+    public Product(int id, String name, String typeOfProduct, int price) {
         this.id = id;
         this.name = name;
         this.typeOfProduct = typeOfProduct;
@@ -44,9 +46,17 @@ public class Product {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", typeOfProduct='" + typeOfProduct + '\'' +
+                ", price=" + price + " USD" +
+                '}';
+    }
 }

@@ -1,13 +1,8 @@
 package assignment.service;
-
 import assignment.controller.MainMenu;
 import assignment.model.Student;
 
 public class StudentFunctions implements Service {
-
-
-
-
 
     @Override
     public void add() {
@@ -57,7 +52,6 @@ public class StudentFunctions implements Service {
                 MainMenu.displayMenu();
             }
         }
-
     }
 
     @Override
