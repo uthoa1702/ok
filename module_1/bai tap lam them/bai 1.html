@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhap do dai");
+    console.log(n)
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let y = +prompt("nhap phan tu thu i");
+        arr.push(y);
+
+    }
+    console.log(arr)
+    let sum = 0;
+
+    for (let i = 0; i < n; i++) {
+        if (i % 2 !== 0 && arr[i] % 2 === 0) {
+            sum = sum + arr[i];
+        }
+    }
+    console.log(sum);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="checkName" placeholder="nhap ten ngoi sao">
+<button onclick="find()">find</button>
+<br>
+<p id="resu"></p>
+</body>
+</html>
+<script>
+    // let arrA = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    // let arrB = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+
+    function find() {
+        let arrA = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arrB = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let checkName = document.getElementById("checkName").value;
+        for (let i = 0; i < arrA.length; i++) {
+            if (arrA[i] === checkName) {
+
+                document.getElementById("resu").innerHTML = arrB[i];
+                break;
+
+            } else {
+                document.getElementById("resu").innerHTML = "khong tim thay ten"
+            }
+        }
+    }
+
+
+</script>

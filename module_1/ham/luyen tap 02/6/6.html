@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+<input id="num" placeholder="so bat ki">
+<button type="button" onclick="check()">check</button>
+<button type="reset">reset</button>
+<p id="result"></p>
+</form>
+</body>
+</html>
+<script>
+    function check() {
+        let num = +document.getElementById("num").value;
+
+        if (num >= 0) {
+            document.getElementById("result").innerText = "true";
+        }
+        else if (num < 0) {
+            document.getElementById("result").innerText = "false";
+        }
+    }
+</script>

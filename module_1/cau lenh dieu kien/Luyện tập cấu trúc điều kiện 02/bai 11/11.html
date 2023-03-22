@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10</title>
+</head>
+<body>
+<h1>  thue thu nhap ca nhan  </h1>
+<table>
+    <tr>
+        <td>
+            <label for="a">
+                nhap so tien thu nhap ca nhan
+            </label>
+        </td>
+        <td>
+            <input type="number" id="a" name="a" placeholder="vnd"  >
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button onclick= "kiemtra()" >tinh thue thu nhap</button>
+        </td>
+        <td id="result"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
+<script>
+    function kiemtra() {
+        let a = document.getElementById("a").value;
+        let result1 = a * 0.05
+        let result2 = a * 0.1
+        let result3 = a * 0.15
+
+
+        if ( a > 0 && a <= 5000000  )
+            document.getElementById("result").innerHTML = " thue thu nhap la 5% " + result1 + "vnd";
+        else if (a <= 10000000)
+            document.getElementById("result").innerHTML = " thue thu nhap la 10% " + result2 + "vnd";
+        else
+            document.getElementById("result").innerHTML = " thue thu nhap la 15% " + result3 + "vnd";
+
+
+
+    }
+</script>

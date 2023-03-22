@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh chi so can nang</title>
+</head>
+
+<body>
+<h1>BODY-MASS-INDEX</h1>
+<table>
+    <tr>
+        <td>
+            <label for="numbWeight">nhap so can nang: </label>
+        </td>
+        <td>
+            <input type="number" id="numbWeight" placeholder="kg">
+        </td>
+    </tr>
+    <tr><td></td></tr>
+    <tr>
+        <td>
+            <label for="numbHeight">nhap so chieu cao: </label>
+        </td>
+        <td>
+            <input type="number" id="numbHeight" placeholder="meter">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="bmi()">kiem tra</button>
+        </td>
+    </tr>
+</table>
+<br/>
+<p id="resultBmi"></p>
+
+</body>
+</html>
+<script>
+    function bmi() {
+        let numbWeight = document.getElementById("numbWeight").value;
+        let numbHeight = document.getElementById("numbHeight").value;
+        let bmi = numbWeight / (numbHeight*2) ;
+        let result = "";
+
+        if (bmi < 18.5) {
+            result = "underweight"
+        }
+        else if (bmi < 25.0) {
+            result = "normal"
+        }
+        else if (bmi < 30.0) {
+            result = "overweight"
+        }
+        else {
+            result = "obese"
+        }
+        document.getElementById("resultBmi").innerHTML= "<b>" + result + "</b>"
+
+
+    }
+</script>

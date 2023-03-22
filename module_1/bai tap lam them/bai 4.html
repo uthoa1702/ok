@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhap chieu dai mang: ");
+    let arr = [];
+    let count = 0;
+    for (let i = 0; i < n; i++) {
+        let y = prompt("nhap phan tu thu " + i);
+        arr.push(y);
+    }
+    console.log(arr);
+    for (let i = 0; i < n; i++) {
+        if (arr[i] === arr[arr.length - 1 - i]) {
+            count++;
+        }
+    }
+    console.log(count);
+    if (count === arr.length) {
+        console.log("ok");
+    } else {
+        console.log("no");
+    }
+</script>
+</body>
+</html>

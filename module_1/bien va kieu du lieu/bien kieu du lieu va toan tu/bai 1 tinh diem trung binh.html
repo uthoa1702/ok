@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tinh diem trung binh</title>
+</head>
+<body>
+<script language="JavaScript">
+    var ly, hoa, sinh;
+
+//    lay gia tri nguoi dung
+    ly = prompt('nhap diem ly');
+    hoa = prompt('nhap diem hoa');
+    sinh = prompt('nhap diem sinh');
+
+//    doi sang gia tri number
+    ly = parseInt(ly);
+    hoa = parseInt(hoa);
+    sinh = parseInt(sinh);
+
+//    in ket qua ra trinh duyet
+    document.write("Tổng điểm:" + (ly + hoa + sinh ) + "<br/>")
+    document.write("Điểm trung bình:" + (ly + hoa + sinh )/3 + "<br/>")
+
+</script>
+
+</body>
+</html>

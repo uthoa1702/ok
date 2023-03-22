@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("nhap tuy y");
+    let a = str.trim().toLowerCase();
+    let arr = [];
+    let arrNew = [];
+    let i = 0;
+    let b;
+    let first;
+    let arrRe = [];
+    for (let i = 0; i < a.length; i++) {
+        arr.push(a[i]);
+    }
+    console.log(arr);
+
+
+    function removeSpace(arr) {
+
+
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i - 1] === " " && arr[i] === " ") {
+                arr.splice(i, 1);
+            } else {
+                arrNew.push(arr[i]);
+            }
+
+        }
+        alert(arrNew);
+    }
+
+    removeSpace(arr)
+    console.log(arrNew);
+
+    first = arrNew[0].toUpperCase();
+    console.log(first)
+    arrRe.push(first);
+
+
+    for (i = 1; i < arrNew.length; i++) {
+        if (arrNew[i] === " ") {
+            arrRe.push(" ")
+            arrNew[i + 1] = arrNew[i + 1].toUpperCase();
+
+        } else {
+            arrRe.push(arrNew[i]);
+        }
+
+    }
+
+    console.log(arrRe);
+    let result = arrRe.join("");
+    console.log(result);
+    alert(result);
+
+
+    function counter(result) {
+        let count = result.split(" ");
+        console.log(count);
+        let max;
+        for (let j = 0; j < count.length; j++) {
+            max = count[0];
+            if (count[j].length > max.length) {
+                max = count[j];
+            }
+        }
+        console.log(max);
+        alert(max);
+
+    }
+
+    counter(result);
+
+
+</script>
+</body>
+</html>

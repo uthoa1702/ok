@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 8</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>
+            <button onclick="playGame()" id="playGame" name="play">Play</button>
+        </th>
+
+    </tr>
+
+</table>
+</body>
+</html>
+<script>
+    function playGame() {
+        let num = +prompt("choose maximum number in a range");
+        let numRan = Math.floor(Math.random() * num);
+        console.log(numRan);
+        let numCheck = +prompt("Guess Number");
+        let count = 0;
+        while (numCheck !== numRan) {
+            count++;
+            if (count == 4) {
+                alert("You lose")
+                break;
+            } else if (numCheck < numRan) {
+                alert("your number is smaller");
+            } else {
+                alert ("your number is bigger")
+            }
+            numCheck = prompt ("Guess Number");
+        }
+        if (count == 4) {
+            document.write("no more chance")
+        } else {
+            document.write("Bingo")
+        }
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m = +prompt("nhap m");
+    let n = +prompt("nhap n");
+    let arr = [];
+
+    for (let x = 0; x < m; x++) {
+        arr[x] = [];
+        for (let y = 0; y < n; y++) {
+            arr[x][y] = +prompt("nhap phan thu " + x + " " +y);
+        }
+
+    }
+    console.log(arr);
+
+    
+    function isPrime() {
+        let count = 0;
+let s =0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < arr[i].length; j++) {
+                for (let k = 1; k <= arr[i][j]; k++) {
+                    if (arr[i][j] % k === 0) {
+                        count++;
+                    }
+                }
+                if (count===2){
+                     s++
+                    document.write(arr[i][j] + "<br>")
+                }
+                count = 0;
+
+
+            }
+        }
+        document.write( "mang nay co chung nay so NT " + s);
+
+
+    }
+    isPrime();
+</script>
+</body>
+</html>

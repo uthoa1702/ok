@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hien thi so nguyen to dau tien</title>
+</head>
+<body>
+<script>
+ let number = parseInt(prompt("nhap n so nguyen to dau tien"));
+
+ let count = 0;
+ let countSnt = 0;
+ let n ;
+ let j;
+ for (n = 2; n < 1000; n++)
+    if (countSnt < number) {
+        for (let j = 1; j <= n; j++) {
+            if ( n % j === 0 ) {
+                count += 1;
+        }
+    }
+        if (count === 2) {
+            document.write(n + "<br>");
+            countSnt += 1;
+        }
+        count = 0;
+        } else {
+            break;
+
+    }
+
+</script>
+
+</body>
+</html>

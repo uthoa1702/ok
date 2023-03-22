@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8</title>
+</head>
+<body>
+<h1>  kiem tra so tuoi </h1>
+<table>
+    <tr>
+        <td>
+            <label for="num1">
+                nhap so tuoi
+            </label>
+        </td>
+        <td>
+            <input type="number" id="num1" name="num1"  >
+        </td>
+    </tr>
+       <tr>
+        <td>
+            <button onclick= "tinh()" >tinh</button>
+        </td>
+        <td id="result"></td>
+    </tr>
+
+</table>
+<script>
+    function tinh() {
+        let a = document.getElementById("num1").value;
+        if ( a > 0 && a <= 120)
+            document.getElementById("result").innerHTML = "la tuoi cua 1 nguoi";
+        else
+            document.getElementById("result").innerHTML = "khong phai tuoi cua 1 nguoi"
+
+    }
+</script>
+
+
+</body>
+</html>

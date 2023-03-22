@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrMenu = ["1.cafe", "2.cam vat", "3.nuoc ep ca chua", "4.nuoc dua", "5.nuoc loc", "6.nuoc chanh", "7.thoat khoi menu"];
+     // arrPri = ["1000", "2000", "3000", "4000", "5000", "6000"]
+    alert(arrMenu);
+    let n;
+    let index;
+    do {
+        index = prompt("nhap so thu tu cua mon");
+        switch (index) {
+            case "1":
+                alert("1000 dong/ly");
+                n = +prompt("nhap so luong");
+                alert("total " + n * 1000);
+                break;
+            case "2":
+                alert("2000 dong/ly");
+                n = +prompt("nhap so luong");
+                alert("total " + n * 2000);
+                break;
+            case "3":
+                alert("3000 dong/ly");
+                n = +prompt("nhap so luong");
+                alert("total " + n * 3000);
+                break;
+            case "4":
+                alert("4000 dong/ly");
+                n = +prompt("nhap so luong");
+                alert("total " + n * 4000);
+                break;
+            case "5":
+                alert("5000 dong/ly");
+                n = +prompt("nhap so luong");
+                alert("total " + n * 5000);
+                break;
+            case "6":
+                alert("6000 dong/ly");
+                n = +prompt("nhap so luong");
+                alert("total " + n * 6000);
+                break;
+            case "7":
+                alert("ban da thoat menu");
+                break;
+            default:
+                alert("vui long nhap lai");
+                break;
+        }
+    }
+    while (index !== 7);
+</script>
+</body>
+</html>

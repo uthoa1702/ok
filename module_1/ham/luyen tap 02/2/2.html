@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="r" placeholder="nhap ban kinh hinh tron">
+<button onclick="dtcv()">tinh dien tch va chu vi</button>
+<p id="dienTich"></p>
+<p id="chuVi"></p>
+</body>
+</html>
+<script>
+    function dtcv() {
+        let r = +document.getElementById("r").value;
+        let dienTich = r * r * 3.14;
+        let chuVi = r * 3.14 * 2;
+
+        document.getElementById("dienTich").innerHTML = "dien tich hinh tron = " + dienTich;
+        document.getElementById("chuVi").innerHTML = "chu vi hinh tron = " + chuVi;
+
+
+    }
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num" placeholder="nhap so bat ky">
+<button onclick="binhPhuong()">binh phuong</button>
+<br>
+
+<p id="ketqua"></p>
+<script>
+    function binhPhuong() {
+        let a = document.getElementById("num").value;
+        let result = a * a;
+        document.getElementById("ketqua").innerHTML = result;
+    }
+</script>
+</body>
+</html>

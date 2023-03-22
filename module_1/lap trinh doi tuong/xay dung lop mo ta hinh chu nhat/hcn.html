@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas style="background-color: yellow" id="DemoCanvas" width="500" height="600"></canvas>
+<p id="theMoi"></p>
+<br>
+<button onclick="changeSize()">doi kich thuoc</button>
+<br>
+<script>
+    class Rectangle {
+
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        setHeight(height) {
+            this.height = height;
+        }
+
+
+        drawCanvas(color) {
+            let canvas = document.getElementById("DemoCanvas");
+            let ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = color;
+            ctx.fillRect(10, 10, this.width, this.height);
+        }
+    }
+
+    let myRectangle = new Rectangle(150, 50);
+
+    myRectangle.drawCanvas();
+
+    function changeSize() {
+        let width = +prompt("nhap chieu rong");
+        let height = +prompt("nhap chieu cao");
+        let area = height * width;
+        let per = (height + width) * 2;
+        let color = prompt("nhap mau sac")
+
+        myRectangle.setWidth(width);
+        myRectangle.setHeight(height);
+        document.getElementById("theMoi").innerHTML = "dien tich : " + area + "<br>" + "chu vi : " + per
+
+        myRectangle.drawCanvas(color);
+    }
+
+
+</script>
+</body>
+</html>

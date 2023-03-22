@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="inputNumber">nhap so bat ky</label>
+<input type="number" id="inputNumber" name="inputNumber">
+<button onclick="test()">tang 1 so</button>
+<br>
+<p id="ketQua"></p>
+</body>
+</html>
+<script>
+    let sum;
+
+    function test() {
+        let a = +document.getElementById("inputNumber").value;
+        sum = a + 1;
+        document.getElementById("ketQua").innerHTML = sum;
+
+    }
+
+</script>

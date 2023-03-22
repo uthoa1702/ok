@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhap do dai");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let y = +prompt("nhap phan tu");
+        arr.push(y);
+    }
+    console.log(arr);
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < n; i++) {
+        if (i % 2 !== 0) {
+            arr1.push(arr[i]);
+        } else {
+            arr2.push(arr[i]);
+        }
+    }
+    console.log(arr1);
+    console.log(arr2);
+    if (arr1.length === arr2.length) {
+        console.log("true");
+    } else {
+        console.log("false");
+    }
+
+</script>
+</body>
+</html>

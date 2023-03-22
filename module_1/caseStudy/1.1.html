@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = +prompt("nhap luong cua ban");
+    let income;
+    let tax;
+
+    if (salary >= 15000000) {
+        tax = salary * 0.2;
+        income = salary - tax;
+        alert("thue thu nhap cua ban la " + tax);
+        alert("so tien ban nhan duoc la " + income);
+    } else if (salary >= 7000000 && salary < 15000000) {
+        tax = salary * 0.1;
+        income = salary - tax;
+        alert("thue thu nhap cua ban la " + tax);
+        alert("so tien ban nhan duoc la " + income);
+    } else if (salary < 7000000 && salary > 0) {
+        tax = salary * 0.05;
+        income = salary - tax;
+        alert("thue thu nhap cua ban la " + tax);
+        alert("so tien ban nhan duoc la " + income);
+    }
+</script>
+</body>
+</html>

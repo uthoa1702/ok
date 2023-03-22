@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ung dung may tinh</title>
+</head>
+<body>
+<h1>Calculator</h1>
+<table>
+    <tr>
+        <td>
+            <input type="number" id="number1" placeholder="nhap so thu 1">
+            <input type="number" id="number2" placeholder="nhap so thu 2">
+        </td>
+        <th>=</th>
+        <th id="result"></th>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="add()">Addition(+)</button>
+            <button onclick="sub()">Subtraction(-)</button>
+            <button onclick="mul()">Multiplication(X)</button>
+            <button onclick="dev()">Devision</button>
+        </td>
+    </tr>
+</table>
+<script language="JavaScript">
+    function add() {
+        let number1 = document.getElementById("number1"). value;
+        let number2 = document.getElementById("number2"). value;
+        let result = (Number(number1) + Number(number2));
+        document.getElementById("result").innerHTML = result
+    }
+    function sub() {
+        let number1 = document.getElementById("number1"). value;
+        let number2 = document.getElementById("number2"). value;
+        let result = (Number(number1) - Number(number2));
+        document.getElementById("result").innerHTML = result
+
+    }
+    function mul() {
+        let number1 = document.getElementById("number1"). value;
+        let number2 = document.getElementById("number2"). value;
+        let result = (Number(number1) * Number(number2));
+        document.getElementById("result").innerHTML = result
+
+    }
+    function dev() {
+        let number1 = document.getElementById("number1"). value;
+        let number2 = document.getElementById("number2"). value;
+        let result = (Number(number1) / Number(number2));
+        document.getElementById("result").innerHTML = result
+
+    }
+
+</script>
+</body>
+</html>

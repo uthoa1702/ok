@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("nhap do dai cua mang");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        let y = +prompt("nhap ky tu cua mang");
+        arr.push(y);
+    }
+    console.log(arr);
+    document.write(testArr(arr));
+
+
+    function testArr(arr) {
+        let a = arr[1] - arr[0];
+        let b = arr[0] - arr[1];
+        let count = 0;
+        let count2 = 0;
+        for (let i = 0; i < arr.length; i++) {
+
+            if ((arr[i + 1] - arr[i]) === a) {
+                count++;
+            }
+            if ((arr[i] - arr[i + 1]) === b) {
+                count2++;
+            }
+            if (arr[i] === arr[i + 1]) {
+                return false;
+            }
+        }
+        if (count === arr.length - 1 || count2 === arr.length - 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

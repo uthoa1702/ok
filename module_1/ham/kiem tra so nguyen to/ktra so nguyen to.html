@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tit\le</title>
+</head>
+<body>
+<input type="number" id="ranNum" placeholder="nhap so bat ky">
+<button onclick="isPrime()">Check</button>
+<p id="result"></p>
+
+</body>
+</html>
+<script>
+
+    // let count = 0;
+
+    function isPrime() {
+        let ranNum = +document.getElementById("ranNum").value;
+        // console.log(ranNum);
+        if (ranNum === 2) {
+            document.getElementById("result").innerHTML = ranNum + " la so nguyen to";
+            return;
+        }
+
+        for (let i = 2; i < ranNum; i++) {
+            if (ranNum % i === 0) {
+                document.getElementById("result").innerHTML = ranNum + " khong phai la so nguyen to";
+                return;
+            }
+
+        }
+        document.getElementById("result").innerHTML = ranNum + " la so nguyen to";
+    }
+
+</script>

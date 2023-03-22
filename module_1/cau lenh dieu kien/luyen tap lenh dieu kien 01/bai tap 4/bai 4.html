@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 4</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <label for="num1">
+                nhap so thu 1
+            </label>
+        </td>
+        <td>
+            <input type="number" id="num1" name="num1" >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="num2">
+                nhap so thu 2
+            </label>
+        </td>
+        <td>
+            <input type="number" id="num2" name="num2">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="num3">
+                nhap so thu 3
+            </label>
+        </td>
+        <td>
+            <input type="number" id="num3" name="num2">
+        </td>
+    </tr>
+    <tr>
+        <td>
+           <button onclick= "solonnhat()" >so lon nhat la</button>
+        </td>
+        <td id="result"></td>
+    </tr>
+
+</table>
+
+<script>
+    function solonnhat() {
+
+
+        let num1 = document.getElementById("num1").value;
+        let num2 = +document.getElementById("num2").value;
+        let num3 = +document.getElementById("num3").value;
+        let max = num1
+
+
+        if (max < num1 ) {
+
+            max = num1
+        }
+
+        if (max < num2) {
+            max = num2
+        }
+
+        if (max < num3) {
+            max = num3
+        }
+
+
+       document.getElementById("result").innerHTML= max
+        }
+
+
+</script>
+</body>
+</html>

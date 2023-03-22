@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+
+    .button {
+        padding: 10px 90px;
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background-color: #04AA6D;
+        border: none;
+        border-radius: 55px;
+        box-shadow: 0 8px #999;
+    }
+
+    .button:hover {background-color: #3e8e41}
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(10px);
+    }
+</style>
+<h2 style="text-align: center">DANH SÁCH HỌC VIÊN</h2>
+<button class="button" onclick="addStudent()" type="button">ADD NEW</button>
+<button class="button" onclick="editStudent()" type="button">EDIT</button>
+<button class="button" onclick="deleteStudent()" type="button">REMOVE</button>
+<br>
+<br>
+<table border="10" cellpadding="6" cellspacing="20" id="studentList"></table>
+</body>
+</html>
+<script>
+    class Student {
+        constructor(stuId, stuName, stuClass, stuEmail, stuBirthDay) {
+            this.stuId = stuId;
+            this.stuName = stuName;
+            this.stuClass = stuClass;
+            this.stuEmail = stuEmail;
+            this.stuBirthDay = stuBirthDay;
+        }
+    }
+
+    let stu1 = new Student("HV-0001", "Nguyễn Văn A", "C0123G1", "nguyenvana@gmail.com", "01/01/1999");
+    let stu2 = new Student("HV-0002", "Nguyễn Văn B", "C0123G1", "nguyenvanb@gmail.com", "01/01/1998");
+
+    let stuList = [];
+
+    stuList.push(stu1);
+    stuList.push(stu2);
+
+    console.log(stuList);
+    displayStudentList(stuList)
+
+    function displayStudentList(stuList) {
+        let table = "<table>";
+        table += "<tr>" +
+            "<th>Mã Học Viên</th>" +
+            "<th>Họ Và Tên</th>" +
+            "<th>Lớp</th>" +
+            "<th>Email</th>" +
+            "<th>Ngày Sinh</th>" +
+            "</tr>";
+        for (let i = 0; i < stuList.length; i++) {
+            table += "<tr>" +
+                "<td>" + stuList[i].stuId + "</td>" +
+                "<td>" + stuList[i].stuName + "</td>" +
+                "<td>" + stuList[i].stuClass + "</td>" +
+                "<td>" + stuList[i].stuEmail + "</td>" +
+                "<td>" + stuList[i].stuBirthDay + "</td>" +
+                "</tr>";
+        }
+        table += "</table>";
+        document.getElementById("studentList").innerHTML = table;
+    }
+
+    function addStudent() {
+        // constructor(stuId, stuName, stuClass, stuEmail, stuBirthDay)
+        let count = 0;
+        let stuId;
+        let stuName;
+        let stuClass;
+        let stuEmail;
+        let stuBirthDay;
+        do {
+            stuId = "HV-" + prompt("Nhập mã số học sinh");
+            for (let i = 0; i < stuList.length; i++) {
+                if (stuList[i].stuId === stuId) {
+                    count++;
+                    flag = false;
+                    break;
+                } else {
+                    count = 0
+                }
+            }
+            if (count === 0 && stuId.length === 7) {
+                do {
+                    stuName = prompt("Nhập tên học viên");
+                    if (stuName.length < 50) {
+                        break;
+                    } else {
+                        alert("Tên quá dài");
+                    }
+                } while (true)
+                stuClass = prompt("Nhập lớp");
+
+                stuEmail = prompt("Nhập Email");
+                stuBirthDay = prompt("Nhập ngày tháng năm sinh");
+                break;
+            } else {
+                alert("Học Viên đã có trong danh sách hoặc sai cú pháp");
+            }
+        } while (true)
+        let newStudent = new Student(stuId, stuName, stuClass, stuEmail, stuBirthDay);
+        stuList.push(newStudent);
+        displayStudentList(stuList);
+
+    }
+
+    function deleteStudent() {
+        let stuId = "HV-" + prompt("Nhập mã số học sinh");
+
+        for (let i = 0; i < stuList.length; i++) {
+            if (stuList[i].stuId === stuId) {
+                let confirmDel = confirm("Are you sure to delete " + stuList[i].stuName);
+                if (confirmDel) {
+                    stuList.splice(i, 1);
+                }
+            }
+        }
+        displayStudentList(stuList);
+    }
+
+    function editStudent() {
+        let stuId;
+        let stuName;
+        let stuClass;
+        let stuEmail;
+        let stuBirthDay;
+        let flag = false;
+        stuId = "HV-" + prompt("Nhập mã số học sinh");
+        for (let i = 0; i < stuList.length; i++) {
+            if (stuList[i].stuId === stuId) {
+                flag = true;
+                let confirmDel = confirm("Are you sure to edit " + stuList[i].stuName);
+                if (confirmDel) {
+                    stuList.splice(i, 1);
+
+                    do {
+                        stuName = prompt("Nhập tên học viên");
+                        if (stuName.length < 50) {
+                            break;
+                        } else {
+                            alert("Tên quá dài");
+                        }
+                    } while (true)
+                    stuClass = prompt("Nhập lớp");
+                    stuEmail = prompt("Nhập Email");
+                    stuBirthDay = prompt("Nhập ngày tháng năm sinh");
+                    let newStudent = new Student(stuId, stuName, stuClass, stuEmail, stuBirthDay);
+                    stuList.push(newStudent);
+                    displayStudentList(stuList);
+                    break;
+                } else {
+                    break;
+                }
+            }
+
+        }
+
+        if (!flag) {
+            alert("ko tim thay hoc vien");
+        }
+
+    }
+
+</script>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tao form dang ky hoc vien</title>
+</head>
+<style>
+    .heighttext{
+        height: 40px;
+    }
+
+  form{background-color: yellow}
+    h2{
+        background-color: greenyellow}
+    h2{ color: blue}
+table{text-align: left;
+
+}
+    .wid{
+        width: 100px;
+    }
+</style>
+<body>
+
+<div>
+    <form>
+        <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+        <table>
+            <tr></tr>
+            <tr>
+                <td>
+                    <label>
+                        <font color="blue">Họ và tên</font> </label></td>
+                <td><input type="text" name="fullname" id="fullname"></td>
+            </tr>
+            <tr>
+    <td>
+        <label>
+            <font color="blue">Ngày sinh</font>
+        </label>
+        </td>
+
+            <td><input class="wid" type="text" name="yourbirth" id="yourbirth"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <font color="blue">Giới tính</font>
+                    </label>
+                </td>
+                <td><input type="radio" name="gender" id="gender"> Nam
+                    <input type="radio" name="gender" id="gender"> Nữ</td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <font color="blue">Địa chỉ</font>
+                    </label>
+                </td>
+                <td>
+                    <input class="heighttext" type="text" name="address" id="address"></td>
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <font color="blue">Lớp</font>
+                    </label>
+                </td>
+                <td>
+                    <select id="class">
+                        <option>--Chọn lớp--</option>
+                        <option value="Full Stack">Full Stack</option>
+                        <option value="Front_end">Front_end</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <font color="blue">Email</font>
+                    </label>
+                </td>
+                <td><input type="email" name="email" id="Email"></td>
+            <tr/>
+            <tr>
+                <td>
+                    <label>
+                        <font color="blue">Điện thoại</font>
+                    </label>
+                </td>
+                <td><input type="number" name="phonenumber" id="phonenumber"></td>
+
+            </tr>
+            <tr>
+                <td></td>
+                <td> <input type="submit" value="Đăng ký">
+                    <input type="reset" value="Nhập Lại"></td>
+
+
+            </tr>
+        </table>
+    </form>
+</div>
+
+</body>
+</html>

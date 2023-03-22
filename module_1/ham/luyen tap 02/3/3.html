@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="ranNum">Nhap so bat ki</label>
+<input id="ranNum" type="number">
+<button onclick="check()">check</button>
+<p id="result"></p>
+<script>
+    function check() {
+        let num = +document.getElementById("ranNum").value;
+        let sum = 1;
+        for (let i = 1; i <= num; i++) {
+            sum *= i;
+            // document.getElementById("result").innerHTML = sum;
+        }
+
+        document.getElementById("result").innerText = sum;
+
+    }
+
+    // check();
+
+    // console.log(sum))
+</script>
+</body>
+</html>

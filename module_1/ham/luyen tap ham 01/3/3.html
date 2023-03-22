@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="num1" placeholder="so thu nhat"><br>
+<input type="number" id="num2" placeholder="so thu hai"><br>
+<button onclick="test()">test</button>
+<p id="ketqua"></p>
+</body>
+</html>
+<script>
+    let sum;
+
+    function test() {
+        let a = +document.getElementById("num1").value;
+        let b = +document.getElementById("num2").value;
+
+        if (a > b) {
+            alert("so thu nhat lon hon so thu hai");
+        } else {
+            sum = a + b;
+            document.getElementById("ketqua").innerHTML = sum;
+        }
+
+    }
+</script>

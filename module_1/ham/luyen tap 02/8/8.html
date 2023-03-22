@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input id="ranNum" placeholder="so bat ki">
+    <button type="button" onclick="reverse()">reverse</button>
+    <button type="reset">reset</button>
+    <p id="result"></p>
+
+</form>
+</body>
+</html>
+<script>
+    function reverse() {
+        let ran = document.getElementById("ranNum").value;
+        let arr = ran.split(' ');
+        let result = [];
+        console.log(arr);
+        ran = arr.join("");
+        console.log(ran);
+        arr = ran.split("");
+        console.log(arr);
+        arr.reverse();
+
+
+        document.getElementById("result").innerText = arr.join('');
+
+    }
+</script>

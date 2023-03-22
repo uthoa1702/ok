@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>9</title>
+</head>
+<body>
+<h1>  kiem tra co phai canh cua tam giac  </h1>
+<table>
+    <tr>
+        <td>
+            <label for="a">
+                nhap a
+            </label>
+        </td>
+        <td>
+            <input type="number" id="a" name="a"  >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="b">
+                nhap b
+            </label>
+        </td>
+        <td>
+            <input type="number" id="b" name="b"  >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="c">
+                nhap c
+            </label>
+        </td>
+        <td>
+            <input type="number" id="c" name="c"  >
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick= "kiemtra()" >kiem tra</button>
+        </td>
+        <td id="result"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
+<script>
+    function kiemtra() {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        let c = document.getElementById("c").value;
+
+      if (a,b,c > 0 && a + b > c && b + c > a && a + c > b)
+          document.getElementById("result").innerHTML = "a b c la cac canh cua tam giac"
+       else
+           document.getElementById("result").innerHTML = "khong phai tam giac"
+
+
+    }
+</script>

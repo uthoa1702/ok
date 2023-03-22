@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="any">
+<button onclick="check()">check</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    function check() {
+        let any = +document.getElementById("any").value;
+
+        if (any + any === any*2) {
+            document.getElementById("result").innerText = "true";
+        }
+        else {
+            document.getElementById("result").innerText = "false"
+        }
+    }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let x = [5, 2, 5];
+    let y = [6, 3, 4];
+    let maxIndex = 0;
+    let z;
+    let arr = [];
+
+    for (let i = 0; i < x.length; i++) {
+        z = x[i] / y[i];
+        arr.push(z);
+    }
+    console.log(arr);
+    for (let i = 0; i < arr.length; i++) {
+        let max = arr[0];
+        if (arr[i] > max) {
+            max = arr[i];
+            maxIndex = i;
+            console.log(maxIndex)
+        }
+
+    }
+
+</script>
+</body>
+</html>

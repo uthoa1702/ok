@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [12,23,2,33,7,54,10,8,57,34];
+    let max = arr[0];
+    let maxIndex = 0;
+    for (let i = 0; i < arr.length;i++){
+        if (max < arr[i]){
+            max = arr[i];
+            maxIndex = i;
+        }
+    }
+    console.log("max = ", max);
+    console.log("max Index =", maxIndex);
+</script>
+</body>
+</html>

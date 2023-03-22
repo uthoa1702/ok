@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [12,23,2,33,7,54,10,8,57,34];
+    let sum = 0;
+    let max = arr[0];
+
+    for (let i = 0; i < arr.length;i++){
+        if (max < arr[i]){
+            max = arr[i];
+
+        }
+
+    }
+    for (let a of arr ){
+        sum += a;
+    }
+    let avg = sum / arr.length
+    console.log("max = ", max);
+    console.log("average =", avg)
+</script>
+</body>
+</html>

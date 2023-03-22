@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai 4</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <label for="num1">
+               nhap doanh so ban hang
+            </label>
+        </td>
+        <td>
+            <input type="number" id="num1" name="num1" placeholder="VND" >
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <button onclick= "hoahong()" >hoa hong nhan duoc</button>
+        </td>
+        <td id="result"></td>
+    </tr>
+
+</table>
+
+<script>
+    function hoahong() {
+
+        let num1 = document.getElementById("num1").value;
+
+        if (num1 <= 5000000)
+            document.getElementById("result").innerHTML = "1 trieu";
+        else if (5000000 < num1)
+            document.getElementById("result").innerHTML = "3 trieu"
+
+    }
+
+</script>
+</body>
+</html>

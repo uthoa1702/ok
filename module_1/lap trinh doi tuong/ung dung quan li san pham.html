@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Production Management</title>
+</head>
+<body>
+<h3>Production Management</h3>
+<label for="phoneName">Phone Name: </label>
+<input type="text" id="phoneName">
+<select id="phoneBrand">
+    <option value=""
+</select>
+
+
+</body>
+</html>
+<script>
+    class Product {
+        constructor(brand, name) {
+            this.brand = brand;
+            this.name = name;
+        }
+    }
+    let phone1 = new Product("Apple", "Iphone 11");
+    let phone2 = new Product("Apple", "Iphone 14 Pro Max");
+    let phone3 = new Product("Samsung", "Z Fold 5");
+
+    let phoneLists = [];
+
+    phoneLists.push(phone1);
+    phoneLists.push(phone2);
+    phoneLists.push(phone3);
+
+    // console.log(phoneLists)
+    
+    function displayPhoneLists(phoneLists) {
+
+    }
+
+</script>

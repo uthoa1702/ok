@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str =prompt("nhap vao");
+    let arrA = str.trim().split("");
+
+
+
+    console.log(arrA);
+    let arrNew = [];
+    for (let i = 0; i < arrA.length; i++) {
+        if (arrNew.indexOf(arrA[i]) === -1 && arrA[i] !== " " ) {
+            arrNew.push(arrA[i]);
+        }
+    }console.log(arrNew);
+    console.log(arrNew.length);
+    document.write("ky tu nhap vao la: " + str + "<br>");
+    document.write("cac ky tu khac nhau la: " + arrNew + "<br>" + "so luong ky tu khac nhau la: " + arrNew.length);
+
+</script>
+
+</body>
+</html>

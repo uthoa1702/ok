@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Production Management</title>
+</head>
+<body>
+<h2>Production Management</h2>
+
+<div>
+    <form>
+        <input type="text" id="phoneBrand" placeholder="Brand">
+        <input type="text" id="phoneName" placeholder="Name">
+        <button type="button" onclick="addPhone()">Add</button>
+
+    </form>
+</div>
+
+<div id="tablePhoneLists">
+
+</div>
+</body>
+</html>
+<script>
+    class Phone {
+        constructor(brand, name) {
+            this.brand = brand;
+            this.name = name;
+        }
+    }
+
+    let phone1 = new Phone("Apple", "Iphone 11");
+    let phone2 = new Phone("Samsung", "Z fold");
+    let phone3 = new Phone("Apple", "Iphone 14 Pro Max");
+    let phoneLists = [];
+
+    phoneLists.push(phone1);
+    phoneLists.push(phone2);
+    phoneLists.push(phone3);
+
+    console.log(phoneLists);
+
+    displayPhoneLists(phoneLists)
+
+    function displayPhoneLists(phoneLists) {
+        let table = "<table border='0' cellspacing='20' cellpadding='10'>";
+        table += "<tr>" +
+            "<th></th>" +
+            "<td><b>Brand</b></td>" +
+            "<td><b>Name</b></td>" +
+            "<th></th>" +
+            "<th></th>" +
+            "</tr>";
+        for (let i = 0; i < phoneLists.length; i++) {
+            table += "<tr>" +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + phoneLists[i].brand + "</td>" +
+                "<td>" + phoneLists[i].name + "</td>" +
+                "<td><button type='button' onclick='deletePhone(" + i + ")'>Remove</button>  </td>" +
+                "<td><button type='button' onclick='editPhone(" + i + ")'>Edit</button>  </td>" +
+                "</tr>"
+
+        }
+        table += "</table>";
+        document.getElementById("tablePhoneLists").innerHTML = table;
+        "</table>";
+    }
+
+    function addPhone() {
+        let brand = document.getElementById("phoneBrand").value;
+        let name = document.getElementById("phoneName").value;
+        let newPhone = new Phone(brand, name);
+        phoneLists.push(newPhone);
+        displayPhoneLists(phoneLists);
+        document.getElementById("phoneBrand").value = "";
+        document.getElementById("phoneName").value = "";
+    }
+
+    function deletePhone(indexPhone) {
+        let confirmDelete = confirm("Are you sure to delete?");
+        if (confirmDelete) {
+            phoneLists.splice(indexPhone, 1);
+            displayPhoneLists(phoneLists);
+        }
+    }
+</script>

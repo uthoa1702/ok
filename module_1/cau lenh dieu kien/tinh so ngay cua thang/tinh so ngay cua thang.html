@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>'tinh so ngay cua cac thang'</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <label for="sothang">Thang: </label>
+            <input type="number" id="sothang" placeholder="1-12">
+        </td>
+        <td>
+            <button onclick="tinhsongay()">tinhsongay</button>
+        </td>
+    </tr>
+</table>
+<p id="result"></p>
+
+</body>
+</html>
+<script>
+    function tinhsongay() {
+        let thang1 = "1";
+        let thang2 = "2";
+        let thang3 = "3";
+        let thang4 = "4";
+        let thang5 = "5";
+        let thang6 = "6";
+        let thang7 = "7";
+        let thang8 = "8";
+        let thang9 = "9";
+        let thang10 = "10";
+        let thang11 = "11";
+        let thang12 = "12";
+``
+        let sothang = document.getElementById("sothang").value;
+
+        switch (sothang) {
+            case thang1:
+            case thang3:
+            case thang5:
+            case thang7:
+            case thang8:
+            case thang10:
+            case thang12:
+                document.getElementById("result").innerHTML = "thang " + sothang + " co 31 ngay "
+                break
+            case thang4:
+            case thang6:
+            case thang9:
+            case thang11:
+                document.getElementById("result").innerHTML = "thang " + sothang + " co 30 ngay "
+                break
+            case thang2:
+                document.getElementById("result").innerHTML = "thang " + sothang + " co 28 hoac 29 ngay "
+                break
+            default:
+                document.getElementById("result").innerHTML = "may dien a"
+                break
+            
+        }
+    }
+</script>
