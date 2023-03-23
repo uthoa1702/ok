@@ -96,16 +96,17 @@ public class ProductFuntions {
     }
 
     public void displayProductListWithDecreasePrice() {
-        arrayListProducts.sort((o1, o2) -> (int) (o2.getPrice() - o1.getPrice()));
+//        arrayListProducts.sort((o1, o2) -> (int) (o2.getPrice() - o1.getPrice()));
+        Collections.sort(arrayListProducts, new ComparePrice());
         for (Product p : arrayListProducts) {
             System.out.println(p);
         }
 //        Menu.displayMenu();
-
     }
 
     public void displayProductListWithIncreasePrice() {
-        arrayListProducts.sort((o1, o2) -> (int) (o1.getPrice() - o2.getPrice()));
+//        arrayListProducts.sort((o1, o2) -> (int) (o1.getPrice() - o2.getPrice()));
+        Collections.sort(arrayListProducts, new CompareId());
         for (Product p : arrayListProducts) {
             System.out.println(p);
         }

@@ -1,5 +1,6 @@
 package practice_using_arrayList_linkedList_in_java_collection_framework.controller;
 
+import practice_using_arrayList_linkedList_in_java_collection_framework.service.CompareId;
 import practice_using_arrayList_linkedList_in_java_collection_framework.service.ProductFuntions;
 
 import java.util.Scanner;
@@ -50,6 +51,7 @@ public class Menu {
                                 break;
                             case 2:
                                 productFuntions.displayProductListWithIncreasePrice();
+
                                 break;
                             case 3:
                                 isFlag=false;
