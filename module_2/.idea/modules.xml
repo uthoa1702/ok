@@ -2,31 +2,30 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DSA Danh sach/DSA Danh sach.iml" filepath="$PROJECT_DIR$/DSA Danh sach/DSA Danh sach.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OOP/Fan/Fan.iml" filepath="$PROJECT_DIR$/OOP/Fan/Fan.iml" />
-      <module fileurl="file://$PROJECT_DIR$/inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/inheritance/Inheritance.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Java Collection Framework/Java Collection Framework.iml" filepath="$PROJECT_DIR$/Java Collection Framework/Java Collection Framework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OOP/OOP.iml" filepath="$PROJECT_DIR$/OOP/OOP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OOP/QuadraticEquation/QuadraticEquation.iml" filepath="$PROJECT_DIR$/OOP/QuadraticEquation/QuadraticEquation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OOP/StopWatch/StopWatch.iml" filepath="$PROJECT_DIR$/OOP/StopWatch/StopWatch.iml" />
-      <module fileurl="file://$PROJECT_DIR$/abstraction/abstraction.iml" filepath="$PROJECT_DIR$/abstraction/abstraction.iml" />
-      <module fileurl="file://$PROJECT_DIR$/access modifier/access modifier.iml" filepath="$PROJECT_DIR$/access modifier/access modifier.iml" />
-      <module fileurl="file://$PROJECT_DIR$/assd/assd.iml" filepath="$PROJECT_DIR$/assd/assd.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss10_dsa _danh_sach/DSA Danh sach.iml" filepath="$PROJECT_DIR$/ss10_dsa _danh_sach/DSA Danh sach.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_oop/Fan/Fan.iml" filepath="$PROJECT_DIR$/ss4_oop/Fan/Fan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss6_inheritance/Inheritance.iml" filepath="$PROJECT_DIR$/ss6_inheritance/Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss12_java_collection_framework/Java Collection Framework.iml" filepath="$PROJECT_DIR$/ss12_java_collection_framework/Java Collection Framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_oop/OOP.iml" filepath="$PROJECT_DIR$/ss4_oop/OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_oop/QuadraticEquation/QuadraticEquation.iml" filepath="$PROJECT_DIR$/ss4_oop/QuadraticEquation/QuadraticEquation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_oop/StopWatch/StopWatch.iml" filepath="$PROJECT_DIR$/ss4_oop/StopWatch/StopWatch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss7_abstraction/abstraction.iml" filepath="$PROJECT_DIR$/ss7_abstraction/abstraction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_access_modifier/access modifier.iml" filepath="$PROJECT_DIR$/ss5_access_modifier/access modifier.iml" />
       <module fileurl="file://$PROJECT_DIR$/assd/bai tap lam them/bai tap lam them.iml" filepath="$PROJECT_DIR$/assd/bai tap lam them/bai tap lam them.iml" />
-      <module fileurl="file://$PROJECT_DIR$/bai tap lam them quan ly/bai tap lam them quan ly.iml" filepath="$PROJECT_DIR$/bai tap lam them quan ly/bai tap lam them quan ly.iml" />
-      <module fileurl="file://$PROJECT_DIR$/abstraction/bai tap lam them1/bai tap lam them1.iml" filepath="$PROJECT_DIR$/abstraction/bai tap lam them1/bai tap lam them1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bai_tap_lam_them_quan_ly/bai tap lam them quan ly.iml" filepath="$PROJECT_DIR$/bai_tap_lam_them_quan_ly/bai tap lam them quan ly.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss7_abstraction/bai tap lam them1/bai tap lam them1.iml" filepath="$PROJECT_DIR$/ss7_abstraction/bai tap lam them1/bai tap lam them1.iml" />
       <module fileurl="file://$PROJECT_DIR$/case study module 2/case study module 2.iml" filepath="$PROJECT_DIR$/case study module 2/case study module 2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/clean code/clean code.iml" filepath="$PROJECT_DIR$/clean code/clean code.iml" />
-      <module fileurl="file://$PROJECT_DIR$/introduction_to_java/introduction_to_java.iml" filepath="$PROJECT_DIR$/introduction_to_java/introduction_to_java.iml" />
-      <module fileurl="file://$PROJECT_DIR$/loop/loop.iml" filepath="$PROJECT_DIR$/loop/loop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mang va phuong thuc trong java/mang va phuong thuc trong java.iml" filepath="$PROJECT_DIR$/mang va phuong thuc trong java/mang va phuong thuc trong java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss8_clean_code/clean code.iml" filepath="$PROJECT_DIR$/ss8_clean_code/clean code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss1_introduction_to_java/introduction_to_java.iml" filepath="$PROJECT_DIR$/ss1_introduction_to_java/introduction_to_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss2_loop/loop.iml" filepath="$PROJECT_DIR$/ss2_loop/loop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss3_mang_va_phuong_thuc_trong_java/mang va phuong thuc trong java.iml" filepath="$PROJECT_DIR$/ss3_mang_va_phuong_thuc_trong_java/mang va phuong thuc trong java.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_2.iml" filepath="$PROJECT_DIR$/module_2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OOP/rectangle/rectangle.iml" filepath="$PROJECT_DIR$/OOP/rectangle/rectangle.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss13 thuat toan tim kiem/ss13 thuat toan tim kiem.iml" filepath="$PROJECT_DIR$/ss13 thuat toan tim kiem/ss13 thuat toan tim kiem.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ss14 thuat toan sap xep/ss14 thuat toan sap xep.iml" filepath="$PROJECT_DIR$/ss14 thuat toan sap xep/ss14 thuat toan sap xep.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stack and queue/stack and queue.iml" filepath="$PROJECT_DIR$/stack and queue/stack and queue.iml" />
-      <module fileurl="file://$PROJECT_DIR$/access modifier/student list/student list.iml" filepath="$PROJECT_DIR$/access modifier/student list/student list.iml" />
-      <module fileurl="file://$PROJECT_DIR$/OOP/testTime/testTime.iml" filepath="$PROJECT_DIR$/OOP/testTime/testTime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_oop/rectangle/rectangle.iml" filepath="$PROJECT_DIR$/ss4_oop/rectangle/rectangle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss13_thuat_toan_tim_kiem/ss13 thuat toan tim kiem.iml" filepath="$PROJECT_DIR$/ss13_thuat_toan_tim_kiem/ss13 thuat toan tim kiem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss14_thuat_toan_sap_ xep/ss14_thuat_toan_sap xep.iml" filepath="$PROJECT_DIR$/ss14_thuat_toan_sap_ xep/ss14_thuat_toan_sap xep.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss11_stack_and_queue/stack and queue.iml" filepath="$PROJECT_DIR$/ss11_stack_and_queue/stack and queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss5_access_modifier/student list/student list.iml" filepath="$PROJECT_DIR$/ss5_access_modifier/student list/student list.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ss4_oop/testTime/testTime.iml" filepath="$PROJECT_DIR$/ss4_oop/testTime/testTime.iml" />
     </modules>
   </component>
 </project>

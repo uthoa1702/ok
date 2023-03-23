@@ -100,7 +100,7 @@ public class ProductFuntions {
         for (Product p : arrayListProducts) {
             System.out.println(p);
         }
-        Menu.displayMenu();
+//        Menu.displayMenu();
 
     }
 
@@ -109,7 +109,6 @@ public class ProductFuntions {
         for (Product p : arrayListProducts) {
             System.out.println(p);
         }
-        Menu.displayMenu();
 
     }
 

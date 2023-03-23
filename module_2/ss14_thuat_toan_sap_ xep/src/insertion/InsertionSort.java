@@ -36,10 +36,10 @@ public class InsertionSort {
             while (pos > 0 && temp < array[pos - 1]) {
                 array[pos] = array[pos - 1];
                 pos--;
-                System.out.println(Arrays.toString(array));
+                System.out.println("thay doi vi tri");
             }
             array[pos] = temp;
-            System.out.println(Arrays.toString(array));
+            System.out.println("thay doi phan tu thu " + (i-1) + " : " + Arrays.toString(array));
         }
         System.out.println(Arrays.toString(array));
     }
