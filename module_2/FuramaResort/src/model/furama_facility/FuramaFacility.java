@@ -1,16 +1,16 @@
-package model.furama;
+package model.furama_facility;
 
-public abstract class Furama {
+public abstract class FuramaFacility {
     protected String serviceName;
     protected double useableArea;
     protected int price;
     protected int maxNumOfPeo;
     protected String typeOfRent;
 
-    public Furama() {
+    public FuramaFacility() {
     }
 
-    public Furama(String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent) {
+    public FuramaFacility(String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent) {
         this.serviceName = serviceName;
         this.useableArea = useableArea;
         this.price = price;

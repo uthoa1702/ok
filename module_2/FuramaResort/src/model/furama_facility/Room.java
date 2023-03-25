@@ -1,8 +1,6 @@
-package model.furama;
+package model.furama_facility;
 
-import model.furama.Furama;
-
-public class Room extends Furama {
+public class Room extends FuramaFacility {
     protected String freeServiceIncluded;
 
     public Room(String freeServiceIncluded) {
