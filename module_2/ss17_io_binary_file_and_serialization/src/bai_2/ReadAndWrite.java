@@ -28,14 +28,12 @@ public class ReadAndWrite {
         return stringList;
     }
 
-    public static void write(String path, List<String> stringList) {
+    public static void write(String path, String stringList) {
         File file = new File(path);
         FileOutputStream fileOutputStream = null;
-        ObjectOutputStream objectOutputStream = null;
         try {
             fileOutputStream = new FileOutputStream(file);
-            objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(stringList);
+            fileOutputStream.write(stringList.getBytes());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -43,7 +41,7 @@ public class ReadAndWrite {
         } finally {
             try {
                 fileOutputStream.close();
-                objectOutputStream.close();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
