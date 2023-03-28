@@ -1,4 +1,4 @@
-package validate_student_name;
+package validate_student_name_and_phone_number;
 
 import java.util.Scanner;
 
