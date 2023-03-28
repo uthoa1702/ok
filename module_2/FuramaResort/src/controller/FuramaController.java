@@ -1,13 +1,13 @@
 package controller;
 
+import services.impl.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
     static Scanner sc = new Scanner(System.in);
+    static EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
 
-    public static void main(String[] args) {
-        displayMainMenu();
-    }
 
     public static void displayMainMenu() {
 
@@ -57,19 +57,23 @@ public class FuramaController {
     public static void employeeManagement() {
         boolean flag = true;
 
-        System.out.println("1. Display list of employees\n" +
-                "2. Add new employee\n" +
-                "3. Edit employee\n" +
-                "4. Return main menu");
+
         do {
+            System.out.println("1. Display list of employees\n" +
+                    "2. Add new employee\n" +
+                    "3. Edit employee\n" +
+                    "4. Return main menu");
             try {
                 int option = Integer.parseInt(sc.nextLine());
                 switch (option) {
                     case 1:
+                        employeeService.display();
                         break;
                     case 2:
+                        employeeService.add();
                         break;
                     case 3:
+                        employeeService.edit();
                         break;
                     case 4:
                         flag = false;
