@@ -150,8 +150,8 @@ public class FuramaController {
         System.out.println("1. Add new booking\n" +
                 "2. Display list of booking\n" +
                 "3. Create new contract\n" +
-                "4. Display list of contracts" +
-                "5. Edit contract" +
+                "4. Display list of contracts\n" +
+                "5. Edit contract\n" +
                 "6. Return main menu");
         do {
             try {

@@ -1,6 +1,7 @@
 package services.impl;
 
 import services.IBookingService;
+import services.IContactService;
 
 
 public class BookingServiceImpl implements IBookingService {

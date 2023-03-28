@@ -11,7 +11,6 @@ public class ValidFullName {
         Scanner scanner = new Scanner(System.in);
         name = scanner.nextLine();
         boolean s = name.matches(REGEX);
-
         if (s) {
             System.out.println("valid class name");
         } else {
