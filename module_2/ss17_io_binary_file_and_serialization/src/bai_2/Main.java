@@ -15,6 +15,5 @@ public class Main {
         ReadAndWrite.write(pathTo,arrayList);
         System.out.println(arrayList);
         System.out.println("done");
-
     }
 }
