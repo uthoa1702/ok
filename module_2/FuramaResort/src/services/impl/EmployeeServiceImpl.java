@@ -74,22 +74,62 @@ public class EmployeeServiceImpl implements IEmployeeService {
             mail = scanner.nextLine();
             System.out.println("Enter salary:");
             salary = Integer.parseInt(scanner.nextLine());
-            arrayListEmployee.add(new Employee(idEmployee,name,birthDay,gender, id,phone,mail,ability,position,salary));
-
+            arrayListEmployee.add(new Employee(idEmployee, name, birthDay, gender, id, phone, mail, ability, position, salary));
             System.out.println("Added");
-
+        } else {
+            System.out.println("ID not found");
         }
     }
 
     @Override
     public void edit() {
-
+        String name, birthDay, gender, ability, position, mail;
+        int id, phone, salary;
+        int count = 0;
+        System.out.println("Enter employee ID to edit: ");
+        int idEmployee = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < arrayListEmployee.size(); i++) {
+            if (arrayListEmployee.get(i).getIdFurama() == idEmployee) {
+                System.out.println("Enter employee name: ");
+                name = scanner.nextLine();
+                arrayListEmployee.get(i).setName(name);
+                System.out.println("Enter birth day:");
+                birthDay = scanner.nextLine();
+                arrayListEmployee.get(i).setBirthday(birthDay);
+                System.out.println("Enter ID: ");
+                id = Integer.parseInt(scanner.nextLine());
+                arrayListEmployee.get(i).setId(id);
+                gender = chooseGender();
+                arrayListEmployee.get(i).setGender(gender);
+                ability = chooseLevel();
+                arrayListEmployee.get(i).setAbility(ability);
+                position = choosePosition();
+                arrayListEmployee.get(i).setPosition(position);
+                System.out.println("Enter phone number:");
+                phone = Integer.parseInt(scanner.nextLine());
+                arrayListEmployee.get(i).setPhoneNum(phone);
+                System.out.println("Enter email:");
+                mail = scanner.nextLine();
+                arrayListEmployee.get(i).setEmail(mail);
+                System.out.println("Enter salary:");
+                salary = Integer.parseInt(scanner.nextLine());
+                arrayListEmployee.get(i).setSalary(salary);
+                System.out.println("Changed");
+                break;
+            } else {
+                count++;
+            }
+        }
+        if (count == arrayListEmployee.size()) {
+            System.out.println("ID not found");
+        }
     }
 
     public static String chooseGender() {
-        boolean flag = true;
+        boolean flag;
         int choose;
         do {
+            flag = true;
             System.out.println("Choose gender: \n" +
                     "1. Male \n" +
                     "2. Female \n" +
@@ -105,27 +145,30 @@ public class EmployeeServiceImpl implements IEmployeeService {
     }
 
     public static String chooseLevel() {
-        boolean flag = true;
+        boolean flag;
         int choose;
         do {
-        System.out.println("Choose Level of education: \n" +
-                "1. Intermediate \n" +
-                "2. College \n" +
-                "3. University\n" +
-                "4. Postgraduate");
-        choose = Integer.parseInt(scanner.nextLine());
+            flag = true;
+            System.out.println("Choose Level of education: \n" +
+                    "1. Intermediate \n" +
+                    "2. College \n" +
+                    "3. University\n" +
+                    "4. Postgraduate");
+            choose = Integer.parseInt(scanner.nextLine());
 
-        if (choose > 4 || choose < 1) {
-            System.out.println("Choose again");
-            flag = false;
-        }
-    } while (!flag);
+            if (choose > 4 || choose < 1) {
+                System.out.println("Choose again");
+                flag = false;
+            }
+        } while (!flag);
         return stringListLevel.get(choose - 1);
     }
+
     public static String choosePosition() {
-        boolean flag = true;
+        boolean flag;
         int choose;
         do {
+            flag = true;
             System.out.println("Choose position: \n" +
                     "1. Receptionist \n" +
                     "2. Waiter/Waitress \n" +

@@ -1,21 +1,27 @@
 package controller;
-
+import services.ICustomerService;
+import services.IEmployeeService;
+import services.IFacilityService;
+import services.impl.CustomerServiceImpl;
 import services.impl.EmployeeServiceImpl;
+import services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
 public class FuramaController {
     static Scanner sc = new Scanner(System.in);
-    static EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
-
+    static IEmployeeService employeeService = new EmployeeServiceImpl();
+    static ICustomerService customerService = new CustomerServiceImpl();
+    static IFacilityService facilityService = new FacilityServiceImpl();
 
     public static void displayMainMenu() {
 
 
-        boolean flag = true;
+        boolean flag;
         do {
+            flag = true;
             try {
-                System.out.println("choose option:" +
+                System.out.println("---------FURAMA MANAGEMENT PROGRAM--------" +
                         "\n 1.Employee Management" +
                         "\n 2.Customer Management" +
                         "\n 3.Facility Management " +
@@ -51,14 +57,12 @@ public class FuramaController {
                 System.out.println("Please type again");
             }
         } while (flag);
-
     }
 
     public static void employeeManagement() {
-        boolean flag = true;
-
-
+        boolean flag;
         do {
+            flag = true;
             System.out.println("1. Display list of employees\n" +
                     "2. Add new employee\n" +
                     "3. Edit employee\n" +
@@ -89,22 +93,27 @@ public class FuramaController {
     }
 
     public static void customerManagement() {
-        boolean flag = true;
+        boolean flag;
         int option;
+        do {
         System.out.println("1. Display list of customers\n" +
                 "2. Add new customer\n" +
                 "3. Edit customer\n" +
                 "4. Return main menu");
-        do {
+
+            flag = true;
             try {
                 option = Integer.parseInt(sc.nextLine());
 
                 switch (option) {
                     case 1:
+                        customerService.display();
                         break;
                     case 2:
+                        customerService.add();
                         break;
                     case 3:
+                        customerService.edit();
                         break;
                     case 4:
                         flag = false;
@@ -119,18 +128,21 @@ public class FuramaController {
     }
 
     public static void facilityManagement() {
-        boolean flag = true;
+        boolean flag;
         int option;
+        do {
+            flag = true;
         System.out.println("1. Display list of facilities\n" +
                 "2. Add new facility\n" +
                 "3. Display list of facilities maintenance\n" +
                 "4. Return main menu");
-        do {
+
             try {
                 option = Integer.parseInt(sc.nextLine());
 
                 switch (option) {
                     case 1:
+                        facilityService.display();
                         break;
                     case 2:
                         break;
@@ -149,15 +161,17 @@ public class FuramaController {
     }
 
     public static void bookingManagement() {
-        boolean flag = true;
+        boolean flag;
         int option;
+        do {
         System.out.println("1. Add new booking\n" +
                 "2. Display list of booking\n" +
                 "3. Create new contract\n" +
                 "4. Display list of contracts\n" +
                 "5. Edit contract\n" +
                 "6. Return main menu");
-        do {
+
+            flag = true;
             try {
                 option = Integer.parseInt(sc.nextLine());
 
@@ -185,12 +199,14 @@ public class FuramaController {
     }
 
     public static void promotionManagement() {
-        boolean flag = true;
+        boolean flag;
         int option;
+        do {
         System.out.println("1. Display list customers use service \n" +
                 "2. Display list customers get voucher\n" +
                 "3. Return main menu");
-        do {
+
+            flag = true;
             try {
                 option = Integer.parseInt(sc.nextLine());
 

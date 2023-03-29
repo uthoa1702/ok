@@ -1,9 +1,8 @@
 package services.impl;
 
+import services.IRoom;
 
-import services.IFacilityService;
-public class FacilityServiceImpl implements IFacilityService {
-
+public class RoomImpl implements IRoom {
     @Override
     public void display() {
 
