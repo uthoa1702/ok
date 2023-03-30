@@ -146,9 +146,10 @@ public class FuramaController {
                         facilityService.display();
                         break;
                     case 2:
-
+                        facilityService.add();
                         break;
                     case 3:
+                        FacilityServiceImpl.displayMaintenanceAll();
                         break;
                     case 4:
                         flag = false;

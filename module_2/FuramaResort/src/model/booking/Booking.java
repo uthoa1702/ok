@@ -80,6 +80,6 @@ public class Booking {
                 '}';
     }
     public String getAll() {
-        return bookingId+","+customerId+","+startDate+","+endDate+","+serviceType+","+serviceName;
+        return bookingId+","+startDate+","+endDate+","+customerId+","+serviceName+","+serviceType;
     }
 }

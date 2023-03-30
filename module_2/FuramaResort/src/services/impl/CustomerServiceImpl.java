@@ -36,16 +36,16 @@ public class CustomerServiceImpl implements ICustomerService {
     public void add() {
         String name, birthDay, gender, address, typeOfMember, mail;
         int id, phone, idCustomer;
-        int count = 0;
-
+        boolean flag = true;
         System.out.println("Enter customer id: ");
         idCustomer = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < customerLinkedList.size(); i++) {
-            if (customerLinkedList.get(i).getIdFurama() != idCustomer) {
-                count++;
+        for (Customer customer : customerLinkedList) {
+            if (customer.getIdFurama() != idCustomer) {
+                flag = false;
+                break;
             }
         }
-        if (count == customerLinkedList.size()) {
+        if (flag) {
             System.out.println("Enter name:");
             name = scanner.nextLine();
             System.out.println("Enter birth day:");

@@ -19,7 +19,7 @@ public class HouseServiceImpl implements IHouseService {
 
 
     static {
-        houseIntegerLinkedHashMap.put(new House("1", "1", 1, 1, 1, "1", "1", 1), 0);
+        houseIntegerLinkedHashMap.put(new House("1", "1", 1, 1, 1, "1", "1", 1), 5);
 
 
     }
@@ -28,7 +28,7 @@ public class HouseServiceImpl implements IHouseService {
     public void display() {
         for (House h :
                 houseIntegerLinkedHashMap.keySet()) {
-            System.out.println(h + " used time: " + houseIntegerLinkedHashMap.get(h));
+            System.out.println(h.getAll() + " ,used time: " + houseIntegerLinkedHashMap.get(h));
         }
     }
 
@@ -37,14 +37,16 @@ public class HouseServiceImpl implements IHouseService {
         String id, serviceName, type, roomStandard;
         int area, price, maxPeo, floor;
         int count= 0;
+        boolean flag = true;
         System.out.println("Enter id:");
         id = scanner.nextLine();
         for (House h : houseIntegerLinkedHashMap.keySet()) {
-            if(!Objects.equals(h.getId(), id)) {
-                count++;
+            if (Objects.equals(h.getId(), id)) {
+                flag = false;
+                break;
             }
         }
-        if (count == houseIntegerLinkedHashMap.size()) {
+        if (flag) {
             System.out.println("Enter service name: ");
             serviceName = scanner.nextLine();
             System.out.println("Enter usable area: ");
@@ -175,5 +177,13 @@ public class HouseServiceImpl implements IHouseService {
             }
         } while (!flag);
         return result;
+    }
+    public static void displayMaintenance() {
+        for (House h :
+                houseIntegerLinkedHashMap.keySet()) {
+            if (houseIntegerLinkedHashMap.get(h)>4){
+                System.out.println(h.getAll() +", USED: "+houseIntegerLinkedHashMap.get(h)+ " times" );
+            }
+        }
     }
 }

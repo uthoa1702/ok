@@ -52,13 +52,14 @@ public class EmployeeServiceImpl implements IEmployeeService {
         int id, phone, salary;
         System.out.println("Enter employee ID: ");
         int idEmployee = Integer.parseInt(scanner.nextLine());
-        int count = 0;
-        for (int i = 0; i < arrayListEmployee.size(); i++) {
-            if (arrayListEmployee.get(i).getIdFurama() != idEmployee) {
-                count++;
+        boolean flag = true;
+        for (Employee employee : arrayListEmployee) {
+            if (employee.getIdFurama() == idEmployee) {
+                flag = false;
+                break;
             }
         }
-        if (count == arrayListEmployee.size()) {
+        if (flag) {
             System.out.println("Enter employee name: ");
             name = scanner.nextLine();
             System.out.println("Enter birth day:");

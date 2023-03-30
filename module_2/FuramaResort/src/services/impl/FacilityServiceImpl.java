@@ -43,10 +43,10 @@ public class FacilityServiceImpl implements IFacilityService {
                     houseService.add();
                     break;
                 case "2":
-                    villaService.add();
+                    roomService.add();
                     break;
                 case "3":
-                    roomService.add();
+                    villaService.add();
                     break;
                 case "4":
                     break;
@@ -63,4 +63,14 @@ public class FacilityServiceImpl implements IFacilityService {
     public void edit() {
 
     }
+    public static void displayMaintenanceAll() {
+        System.out.println("----House list----");
+        HouseServiceImpl.displayMaintenance();
+        System.out.println("----Room list----");
+        RoomServiceImpl.displayMaintenance();
+        System.out.println("----Villa list----");
+        VillaServiceImpl.displayMaintenance();
+    }
+
+
 }

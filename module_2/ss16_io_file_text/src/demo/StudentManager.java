@@ -82,7 +82,7 @@ public class StudentManager {
         File file = new File(STUDENT_LIST_PATH);
         try {
             FileWriter fileWriter = new FileWriter(file, true);
-            fileWriter.write(student.getInfoToCsv());
+            fileWriter.write(student.getClasses());
             fileWriter.write('\n');
             fileWriter.close();
         } catch (IOException ioException) {

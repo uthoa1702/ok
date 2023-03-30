@@ -11,4 +11,5 @@ public interface IFacilityService extends IService {
 
     @Override
     void edit();
+
 }
