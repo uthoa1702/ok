@@ -5,14 +5,10 @@ public class Villa extends FuramaFacility {
     protected double poolArea;
     protected int numOfLevel;
 
-    public Villa(String roomStandard, double poolArea, int numOfLevel) {
-        this.roomStandard = roomStandard;
-        this.poolArea = poolArea;
-        this.numOfLevel = numOfLevel;
-    }
 
-    public Villa(String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent, String roomStandard, double poolArea, int numOfLevel) {
-        super(serviceName, useableArea, price, maxNumOfPeo, typeOfRent);
+
+    public Villa(String id,String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent, String roomStandard, double poolArea, int numOfLevel) {
+        super(id,serviceName, useableArea, price, maxNumOfPeo, typeOfRent);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.numOfLevel = numOfLevel;
@@ -42,17 +38,23 @@ public class Villa extends FuramaFacility {
         this.numOfLevel = numOfLevel;
     }
 
+
     @Override
     public String toString() {
         return "Villa{" +
                 "roomStandard='" + roomStandard + '\'' +
                 ", poolArea=" + poolArea +
                 ", numOfLevel=" + numOfLevel +
+                ", id='" + id + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", useableArea=" + useableArea +
                 ", price=" + price +
                 ", maxNumOfPeo=" + maxNumOfPeo +
                 ", typeOfRent='" + typeOfRent + '\'' +
                 '}';
+    }
+
+    public String getAll() {
+        return id +","+serviceName + "," + useableArea + "," + price + "," + maxNumOfPeo + "," + typeOfRent + "," + roomStandard + "," + poolArea + "," + numOfLevel;
     }
 }

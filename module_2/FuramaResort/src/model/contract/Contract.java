@@ -68,4 +68,7 @@ public class Contract {
                 ", customerId=" + customerId +
                 '}';
     }
+    public String getAll() {
+        return contractId+","+bookingId+","+customerId+","+deposit+","+total;
+    }
 }

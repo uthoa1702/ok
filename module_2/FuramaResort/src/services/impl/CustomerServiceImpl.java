@@ -61,7 +61,9 @@ public class CustomerServiceImpl implements ICustomerService {
             System.out.println("Enter address");
             address = scanner.nextLine();
             customerLinkedList.add(new Customer(idCustomer, name, birthDay, gender, id, phone, mail, typeOfMember, address));
-
+        }
+        else {
+            System.out.println("ID exist");
         }
     }
 

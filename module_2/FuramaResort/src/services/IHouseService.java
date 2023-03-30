@@ -1,6 +1,6 @@
 package services;
 
-public interface IHouse extends IService{
+public interface IHouseService extends IService{
     @Override
     void display();
 

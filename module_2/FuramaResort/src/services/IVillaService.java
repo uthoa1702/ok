@@ -1,6 +1,6 @@
 package services;
 
-public interface IVilla extends IService{
+public interface IVillaService extends IService{
     @Override
     void display();
 

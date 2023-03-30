@@ -1,21 +1,21 @@
 package model.person;
 
 public class Customer extends Person{
-    protected String TypeOfCustomer;
+    protected String typeOfCustomer;
     protected String address;
 
     public Customer(int idFurama, String name, String birthday, String gender, int id, int phoneNum, String email, String typeOfCustomer, String address) {
         super(idFurama, name, birthday, gender, id, phoneNum, email);
-        TypeOfCustomer = typeOfCustomer;
+        this.typeOfCustomer = typeOfCustomer;
         this.address = address;
     }
 
     public String getTypeOfCustomer() {
-        return TypeOfCustomer;
+        return typeOfCustomer;
     }
 
     public void setTypeOfCustomer(String typeOfCustomer) {
-        TypeOfCustomer = typeOfCustomer;
+        this.typeOfCustomer = typeOfCustomer;
     }
 
     public String getAddress() {
@@ -29,7 +29,7 @@ public class Customer extends Person{
     @Override
     public String toString() {
         return "Customer{" +
-                "TypeOfCustomer='" + TypeOfCustomer + '\'' +
+                "TypeOfCustomer='" + typeOfCustomer + '\'' +
                 ", address='" + address + '\'' +
                 ", idFurama=" + idFurama +
                 ", name='" + name + '\'' +
@@ -39,5 +39,8 @@ public class Customer extends Person{
                 ", phoneNum=" + phoneNum +
                 ", email='" + email + '\'' +
                 '}';
+    }
+    public String getAll() {
+        return idFurama+","+name+","+birthday+","+gender+","+id+","+address+","+email+","+phoneNum+","+typeOfCustomer;
     }
 }

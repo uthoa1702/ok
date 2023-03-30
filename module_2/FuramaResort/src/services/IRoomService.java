@@ -1,6 +1,6 @@
 package services;
 
-public interface IRoom extends IService{
+public interface IRoomService extends IService{
     @Override
     void display();
 

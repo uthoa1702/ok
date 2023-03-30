@@ -79,4 +79,7 @@ public class Booking {
                 ", serviceType='" + serviceType + '\'' +
                 '}';
     }
+    public String getAll() {
+        return bookingId+","+customerId+","+startDate+","+endDate+","+serviceType+","+serviceName;
+    }
 }

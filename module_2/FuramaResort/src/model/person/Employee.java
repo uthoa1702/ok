@@ -55,4 +55,7 @@ public class Employee extends Person {
                 ", email='" + email + '\'' +
                 '}';
     }
+    public String getAll() {
+        return idFurama+","+name+","+birthday+","+gender+","+id+","+email+","+phoneNum+","+ability+","+position+","+salary;
+    }
 }

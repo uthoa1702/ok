@@ -77,7 +77,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
             arrayListEmployee.add(new Employee(idEmployee, name, birthDay, gender, id, phone, mail, ability, position, salary));
             System.out.println("Added");
         } else {
-            System.out.println("ID not found");
+            System.out.println("ID exists");
         }
     }
 

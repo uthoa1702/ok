@@ -5,6 +5,7 @@ import services.IFacilityService;
 import services.impl.CustomerServiceImpl;
 import services.impl.EmployeeServiceImpl;
 import services.impl.FacilityServiceImpl;
+import services.impl.HouseServiceImpl;
 
 import java.util.Scanner;
 
@@ -145,6 +146,7 @@ public class FuramaController {
                         facilityService.display();
                         break;
                     case 2:
+
                         break;
                     case 3:
                         break;

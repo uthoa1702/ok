@@ -7,8 +7,8 @@ public class Room extends FuramaFacility {
         this.freeServiceIncluded = freeServiceIncluded;
     }
 
-    public Room(String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent, String freeServiceIncluded) {
-        super(serviceName, useableArea, price, maxNumOfPeo, typeOfRent);
+    public Room(String id,String serviceName, double usableArea, int price, int maxNumOfPeo, String typeOfRent, String freeServiceIncluded) {
+        super(id,serviceName, usableArea, price, maxNumOfPeo, typeOfRent);
         this.freeServiceIncluded = freeServiceIncluded;
     }
 
@@ -30,5 +30,8 @@ public class Room extends FuramaFacility {
                 ", maxNumOfPeo=" + maxNumOfPeo +
                 ", typeOfRent='" + typeOfRent + '\'' +
                 '}';
+    }
+    public String getAll() {
+        return id+","+serviceName +","+ useableArea +","+ price +","+ maxNumOfPeo +","+ typeOfRent +","+ freeServiceIncluded;
     }
 }

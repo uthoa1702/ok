@@ -9,8 +9,8 @@ public class House extends FuramaFacility {
         this.numOfLevel = numOfLevel;
     }
 
-    public House(String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent, String roomStandard, int numOfLevel) {
-        super(serviceName, useableArea, price, maxNumOfPeo, typeOfRent);
+    public House(String id,String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent, String roomStandard, int numOfLevel) {
+        super(id,serviceName, useableArea, price, maxNumOfPeo, typeOfRent);
         this.roomStandard = roomStandard;
         this.numOfLevel = numOfLevel;
     }
@@ -31,16 +31,22 @@ public class House extends FuramaFacility {
         this.numOfLevel = numOfLevel;
     }
 
+
     @Override
     public String toString() {
         return "House{" +
                 "roomStandard='" + roomStandard + '\'' +
                 ", numOfLevel=" + numOfLevel +
+                ", id='" + id + '\'' +
                 ", serviceName='" + serviceName + '\'' +
                 ", useableArea=" + useableArea +
                 ", price=" + price +
                 ", maxNumOfPeo=" + maxNumOfPeo +
                 ", typeOfRent='" + typeOfRent + '\'' +
                 '}';
+    }
+
+    public String getAll() {
+        return id +","+serviceName +","+ useableArea +","+ price +","+ maxNumOfPeo +","+ typeOfRent +","+ roomStandard +","+ numOfLevel;
     }
 }

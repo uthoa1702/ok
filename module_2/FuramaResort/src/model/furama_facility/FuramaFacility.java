@@ -1,6 +1,9 @@
 package model.furama_facility;
 
+import java.util.Objects;
+
 public abstract class FuramaFacility {
+    protected String id;
     protected String serviceName;
     protected double useableArea;
     protected int price;
@@ -10,12 +13,31 @@ public abstract class FuramaFacility {
     public FuramaFacility() {
     }
 
-    public FuramaFacility(String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent) {
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(serviceName);
+    }
+
+    public FuramaFacility(String id, String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent) {
         this.serviceName = serviceName;
         this.useableArea = useableArea;
         this.price = price;
         this.maxNumOfPeo = maxNumOfPeo;
         this.typeOfRent = typeOfRent;
+        this.id = id;
+    }
+
+    public FuramaFacility(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getServiceName() {
@@ -60,8 +82,9 @@ public abstract class FuramaFacility {
 
     @Override
     public String toString() {
-        return "Furama{" +
-                "serviceName='" + serviceName + '\'' +
+        return "FuramaFacility{" +
+                "id='" + id + '\'' +
+                ", serviceName='" + serviceName + '\'' +
                 ", useableArea=" + useableArea +
                 ", price=" + price +
                 ", maxNumOfPeo=" + maxNumOfPeo +
