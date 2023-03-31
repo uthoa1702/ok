@@ -43,7 +43,6 @@ public class VillaServiceImpl implements IVillaService {
             }
         }
         if (flag) {
-
             serviceName = Validate.checkServiceName();
             area = Validate.checkArea();
             price = Validate.checkPrice();
