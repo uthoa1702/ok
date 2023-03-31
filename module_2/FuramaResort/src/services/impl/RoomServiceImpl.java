@@ -4,6 +4,7 @@ package services.impl;
 import model.furama_facility.House;
 import model.furama_facility.Room;
 import services.IRoomService;
+import util.validate.Validate;
 
 import java.util.LinkedHashMap;
 import java.util.Objects;
@@ -36,8 +37,8 @@ public class RoomServiceImpl implements IRoomService {
         int area, price, maxPeo;
 
         boolean flag = true;
-        System.out.println("Enter id:");
-        id = scanner.nextLine();
+
+        id = Validate.checkRoomID();
         for (Room h : roomIntegerLinkedHashMap.keySet()) {
             if (Objects.equals(h.getId(), id)) {
                 flag = false;
@@ -45,15 +46,12 @@ public class RoomServiceImpl implements IRoomService {
             }
         }
         if (flag) {
-            System.out.println("Enter service name: ");
-            serviceName = scanner.nextLine();
-            System.out.println("Enter usable area: ");
-            area = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter price: ");
-            price = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter maximum people: ");
-            maxPeo = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter type of rent: ");
+
+            serviceName = Validate.checkServiceName();
+
+            area = Validate.checkArea();
+            price = Validate.checkPrice();
+            maxPeo = Validate.checkMaxPeople();
             type = chooseTypeOfRent();
             System.out.println("Enter free service included:");
             String free = scanner.nextLine();

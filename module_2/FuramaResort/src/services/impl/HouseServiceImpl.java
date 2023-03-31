@@ -2,19 +2,25 @@ package services.impl;
 
 import model.furama_facility.House;
 import services.IHouseService;
+import util.validate.Validate;
 
 import java.util.*;
 
 public class HouseServiceImpl implements IHouseService {
     static Scanner scanner = new Scanner(System.in);
     static LinkedHashMap<House, Integer> houseIntegerLinkedHashMap = new LinkedHashMap<>();
-    static String[] typeOfRentList = {"year" +
-            "month" +
-            "day" +
-            "hour"};
-    static String[] roomStandard = {"Standard" +
-            "Superior" +
-            "Deluxe" +
+    static List<String> typeOfRentList = new ArrayList<>();
+
+    static {
+        typeOfRentList.add("Year");
+        typeOfRentList.add("Month");
+        typeOfRentList.add("Day");
+        typeOfRentList.add("Hour");
+    }
+
+    static String[] roomStandard = {"Standard",
+            "Superior",
+            "Deluxe",
             "Executive"};
 
 
@@ -23,6 +29,9 @@ public class HouseServiceImpl implements IHouseService {
 
 
     }
+
+    static final String REGEX_HOUSE_ID = "^(SVHO)(-)[0-9]{4}$";
+    static final String REGEX_HOUSE_SERVICE_NAME = "^[A-Z][a-z]*$";
 
     @Override
     public void display() {
@@ -36,10 +45,16 @@ public class HouseServiceImpl implements IHouseService {
     public void add() {
         String id, serviceName, type, roomStandard;
         int area, price, maxPeo, floor;
-        int count= 0;
         boolean flag = true;
-        System.out.println("Enter id:");
-        id = scanner.nextLine();
+        boolean check;
+
+        do {
+
+            System.out.println("Enter id:");
+            System.out.println("Example: SVHO-YYYY ");
+            id = scanner.nextLine();
+            check = checkHouseId(id);
+        } while (!check);
         for (House h : houseIntegerLinkedHashMap.keySet()) {
             if (Objects.equals(h.getId(), id)) {
                 flag = false;
@@ -47,24 +62,42 @@ public class HouseServiceImpl implements IHouseService {
             }
         }
         if (flag) {
-            System.out.println("Enter service name: ");
-            serviceName = scanner.nextLine();
-            System.out.println("Enter usable area: ");
-            area = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter price: ");
-            price = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter maximum people: ");
-            maxPeo = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter type of rent: ");
-            type = chooseTypeOfRent();
-            System.out.println("Enter room standard: ");
-            roomStandard = chooseRoomStandard();
-            System.out.println("Enter number of level: ");
-            floor = Integer.parseInt(scanner.nextLine());
-            houseIntegerLinkedHashMap.put(new House(id, serviceName, area, price, maxPeo, type, roomStandard, floor), 0);
-            System.out.println("added");
-        }
-        else {
+            boolean flagServiceName;
+            do {
+                flagServiceName = true;
+                System.out.println("Enter service name: ");
+                serviceName = scanner.nextLine();
+                boolean match = serviceName.matches(REGEX_HOUSE_SERVICE_NAME);
+                if (match) {
+
+                    boolean flagArea;
+                    do {
+                        System.out.println("Enter usable area: ");
+                        area = Integer.parseInt(scanner.nextLine());
+                        flagArea = true;
+                        if (area > 30) {
+                            price = Validate.checkPrice();
+                            maxPeo = Validate.checkMaxPeople();
+                            System.out.println("Enter type of rent: ");
+                            type = chooseTypeOfRent();
+                            System.out.println("Enter room standard: ");
+                            roomStandard = chooseRoomStandard();
+                            floor = Validate.checkFloor();
+                            houseIntegerLinkedHashMap.put(new House(id, serviceName, area, price, maxPeo, type, roomStandard, floor), 0);
+                            System.out.println("added");
+                            flagServiceName = false;
+                            flagArea = false;
+                        } else {
+                            flagArea = true;
+                        }
+
+                    } while (flagArea);
+
+                }
+
+            } while (flagServiceName);
+
+        } else {
             System.out.println("ID exists");
         }
     }
@@ -73,7 +106,7 @@ public class HouseServiceImpl implements IHouseService {
     public void edit() {
         String id, serviceName, type, roomStandard;
         int area, price, maxPeo, floor;
-        int count= 0;
+        int count = 0;
         System.out.println("Enter ID to edit: ");
         id = scanner.nextLine();
         for (House h : houseIntegerLinkedHashMap.keySet()) {
@@ -101,13 +134,12 @@ public class HouseServiceImpl implements IHouseService {
                 h.setNumOfLevel(floor);
                 System.out.println("edited");
                 break;
-            }
-            else {
+            } else {
                 count++;
             }
 
         }
-        if (count== houseIntegerLinkedHashMap.size()){
+        if (count == houseIntegerLinkedHashMap.size()) {
             System.out.println("ID not found");
         }
     }
@@ -125,19 +157,19 @@ public class HouseServiceImpl implements IHouseService {
             flag = true;
             switch (choose) {
                 case 1:
-                    result = typeOfRentList[0];
+                    result = typeOfRentList.get(0);
                     break;
 
                 case 2:
-                    result = typeOfRentList[1];
+                    result = typeOfRentList.get(1);
                     break;
 
                 case 3:
-                    result = typeOfRentList[2];
+                    result = typeOfRentList.get(2);
                     break;
 
                 case 4:
-                    result = typeOfRentList[3];
+                    result = typeOfRentList.get(3);
                     break;
 
                 default:
@@ -178,12 +210,19 @@ public class HouseServiceImpl implements IHouseService {
         } while (!flag);
         return result;
     }
+
     public static void displayMaintenance() {
         for (House h :
                 houseIntegerLinkedHashMap.keySet()) {
-            if (houseIntegerLinkedHashMap.get(h)>4){
-                System.out.println(h.getAll() +", USED: "+houseIntegerLinkedHashMap.get(h)+ " times" );
+            if (houseIntegerLinkedHashMap.get(h) > 4) {
+                System.out.println(h.getAll() + ", USED: " + houseIntegerLinkedHashMap.get(h) + " times");
             }
         }
+    }
+
+    public static boolean checkHouseId(String id) {
+        boolean result;
+        result = id.matches(REGEX_HOUSE_ID);
+        return result;
     }
 }

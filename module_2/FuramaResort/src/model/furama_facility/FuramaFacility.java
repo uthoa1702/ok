@@ -14,12 +14,7 @@ public abstract class FuramaFacility {
     }
 
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(serviceName);
-    }
-
-    public FuramaFacility(String id, String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent) {
+    public FuramaFacility(String id, String serviceName, int useableArea, int price, int maxNumOfPeo, String typeOfRent) {
         this.serviceName = serviceName;
         this.useableArea = useableArea;
         this.price = price;
@@ -48,11 +43,11 @@ public abstract class FuramaFacility {
         this.serviceName = serviceName;
     }
 
-    public double getUseableArea() {
-        return useableArea;
+    public int getUseableArea() {
+        return (int) useableArea;
     }
 
-    public void setUseableArea(double useableArea) {
+    public void setUseableArea(int useableArea) {
         this.useableArea = useableArea;
     }
 

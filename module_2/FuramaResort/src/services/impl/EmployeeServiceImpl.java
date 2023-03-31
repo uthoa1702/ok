@@ -2,6 +2,7 @@ package services.impl;
 
 import model.person.Employee;
 import services.IEmployeeService;
+import util.validate.Validate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,8 +63,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         if (flag) {
             System.out.println("Enter employee name: ");
             name = scanner.nextLine();
-            System.out.println("Enter birth day:");
-            birthDay = scanner.nextLine();
+            birthDay = Validate.checkBirthday();
             System.out.println("Enter ID: ");
             id = Integer.parseInt(scanner.nextLine());
             gender = chooseGender();
@@ -94,8 +94,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 System.out.println("Enter employee name: ");
                 name = scanner.nextLine();
                 arrayListEmployee.get(i).setName(name);
-                System.out.println("Enter birth day:");
-                birthDay = scanner.nextLine();
+                birthDay = Validate.checkBirthday();
                 arrayListEmployee.get(i).setBirthday(birthDay);
                 System.out.println("Enter ID: ");
                 id = Integer.parseInt(scanner.nextLine());

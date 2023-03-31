@@ -3,6 +3,7 @@ package services.impl;
 import model.furama_facility.House;
 import model.furama_facility.Villa;
 import services.IVillaService;
+import util.validate.Validate;
 
 import java.util.LinkedHashMap;
 import java.util.Objects;
@@ -42,20 +43,16 @@ public class VillaServiceImpl implements IVillaService {
             }
         }
         if (flag) {
-            System.out.println("Enter service name: ");
-            serviceName = scanner.nextLine();
-            System.out.println("Enter usable area: ");
-            area = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter price: ");
-            price = Integer.parseInt(scanner.nextLine());
-            System.out.println("Enter maximum people: ");
-            maxPeo = Integer.parseInt(scanner.nextLine());
+
+            serviceName = Validate.checkServiceName();
+            area = Validate.checkArea();
+            price = Validate.checkPrice();
+            maxPeo = Validate.checkMaxPeople();
             System.out.println("Enter type of rent: ");
             type = chooseTypeOfRent();
             System.out.println("Enter room standard: ");
             roomStandard = chooseRoomStandard();
-            System.out.println("Enter number of level: ");
-            floor = Integer.parseInt(scanner.nextLine());
+            floor = Validate.checkFloor();
             System.out.println("Enter pool area:");
             poolArea = Integer.parseInt(scanner.nextLine());
             villaIntegerLinkedHashMap.put(new Villa(id, serviceName, area, price, maxPeo, type, roomStandard, poolArea, floor), 0);

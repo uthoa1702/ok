@@ -2,6 +2,7 @@ package services.impl;
 
 import model.person.Customer;
 import services.ICustomerService;
+import util.validate.Validate;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -48,8 +49,7 @@ public class CustomerServiceImpl implements ICustomerService {
         if (flag) {
             System.out.println("Enter name:");
             name = scanner.nextLine();
-            System.out.println("Enter birth day:");
-            birthDay = scanner.nextLine();
+            birthDay = Validate.checkBirthday();
             gender = chooseGender();
             System.out.println("Enter id:");
             id = Integer.parseInt(scanner.nextLine());
