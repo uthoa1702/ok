@@ -1,32 +1,35 @@
 package util.read_and_write;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import model.person.Employee;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class ReadAndWriteEmployee {
-    static final String EMPLOYEE_PATH_FILE = "D:\\code_Gym\\ok\\module_2\\FuramaResort\\src\\data\\employee.csv";
 
-    public static ArrayList<String> read() {
-        ArrayList<String> employees = new ArrayList<>();
-        File file = new File(EMPLOYEE_PATH_FILE);
-        try (FileReader reader = new FileReader(file);
-             BufferedReader br = new BufferedReader(reader)) {
+    public static List<Employee> read(String path) {
 
-            String line = null;
-            while ((line = br.readLine()) != null) {
-                String[] strings = line.split(",");
-                employees.addAll(Arrays.asList(strings));
-                br.readLine();
+        List<Employee> employeeList = new ArrayList<>();
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+        try {
+            String temp = "";
+            String[] arrTemp;
+            Employee employee;
+            fileReader = new FileReader(path);
+            bufferedReader = new BufferedReader(fileReader);
+            while ((temp = bufferedReader.readLine()) != null)  {
+                arrTemp = temp.split(",");
+                employee = new Employee( Integer.parseInt(arrTemp[0]), arrTemp[0],arrTemp[0], arrTemp[0], Integer.parseInt(arrTemp[0]), Integer.parseInt(arrTemp[0]), arrTemp[0], arrTemp[0], arrTemp[0], Integer.parseInt(arrTemp[0]));
             }
 
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
-
-return employees;
+        return employeeList;
     }
 }
