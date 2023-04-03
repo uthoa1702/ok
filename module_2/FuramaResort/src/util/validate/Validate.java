@@ -108,7 +108,6 @@ public class Validate {
         String birth;
         boolean check;
         do {
-            check = true;
             System.out.println("Enter birthdayy: ");
             birth = scanner.nextLine();
             check = birth.matches(REGEX_BIRTHDAY);

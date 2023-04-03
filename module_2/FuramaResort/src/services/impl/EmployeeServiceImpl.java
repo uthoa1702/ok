@@ -1,7 +1,11 @@
 package services.impl;
 
 import model.person.Employee;
+import repository.impl.EmployeeRepository;
 import services.IEmployeeService;
+import util.read_and_write.ReadAndWrite;
+import util.read_and_write.ReadAndWriteCustomer;
+import util.read_and_write.ReadAndWriteEmployee;
 import util.validate.Validate;
 
 import java.util.ArrayList;
@@ -10,7 +14,9 @@ import java.util.Scanner;
 
 public class EmployeeServiceImpl implements IEmployeeService {
 
-    static ArrayList<Employee> arrayListEmployee = new ArrayList<>();
+
+    static List<Employee> arrayListEmployee = new ArrayList<>();
+
     static List<String> stringListGender = new ArrayList<>();
     static List<String> stringListLevel = new ArrayList<>();
     static List<String> stringListPosition = new ArrayList<>();
@@ -40,15 +46,19 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     static Scanner scanner = new Scanner(System.in);
 
+    static EmployeeRepository employeeRepository = new EmployeeRepository();
+
+
     @Override
     public void display() {
-        for (Employee e : arrayListEmployee) {
-            System.out.println(e);
-        }
+        employeeRepository.display();
+
     }
+
 
     @Override
     public void add() {
+        arrayListEmployee = ReadAndWriteEmployee.read();
         String name, birthDay, gender, ability, position, mail;
         int id, phone, salary;
         System.out.println("Enter employee ID: ");
@@ -76,6 +86,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
             System.out.println("Enter salary:");
             salary = Integer.parseInt(scanner.nextLine());
             arrayListEmployee.add(new Employee(idEmployee, name, birthDay, gender, id, phone, mail, ability, position, salary));
+            employeeRepository.add(arrayListEmployee);
             System.out.println("Added");
         } else {
             System.out.println("ID exists");
@@ -84,6 +95,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
 
     @Override
     public void edit() {
+        arrayListEmployee = ReadAndWriteEmployee.read();
         String name, birthDay, gender, ability, position, mail;
         int id, phone, salary;
         int count = 0;
@@ -114,6 +126,8 @@ public class EmployeeServiceImpl implements IEmployeeService {
                 System.out.println("Enter salary:");
                 salary = Integer.parseInt(scanner.nextLine());
                 arrayListEmployee.get(i).setSalary(salary);
+
+                employeeRepository.edit(arrayListEmployee);
                 System.out.println("Changed");
                 break;
             } else {
@@ -123,6 +137,7 @@ public class EmployeeServiceImpl implements IEmployeeService {
         if (count == arrayListEmployee.size()) {
             System.out.println("ID not found");
         }
+
     }
 
     public static String chooseGender() {

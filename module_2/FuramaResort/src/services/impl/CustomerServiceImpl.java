@@ -1,7 +1,9 @@
 package services.impl;
 
 import model.person.Customer;
+import repository.impl.CustomerRepository;
 import services.ICustomerService;
+import util.read_and_write.ReadAndWriteCustomer;
 import util.validate.Validate;
 
 import java.util.ArrayList;
@@ -12,9 +14,10 @@ import java.util.Scanner;
 import static services.impl.EmployeeServiceImpl.stringListGender;
 
 public class CustomerServiceImpl implements ICustomerService {
+    CustomerRepository customerRepository = new CustomerRepository();
     static Scanner scanner = new Scanner(System.in);
 
-    static LinkedList<Customer> customerLinkedList = new LinkedList<>();
+    static LinkedList<Customer> customerLinkedList = ReadAndWriteCustomer.read();
 
     static List<String> typeOfCustomer = new ArrayList<>();
 
@@ -28,20 +31,19 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public void display() {
-        for (Customer c : customerLinkedList) {
-            System.out.println(c);
-        }
+        customerRepository.display();
     }
 
     @Override
     public void add() {
+        customerLinkedList = ReadAndWriteCustomer.read();
         String name, birthDay, gender, address, typeOfMember, mail;
         int id, phone, idCustomer;
         boolean flag = true;
         System.out.println("Enter customer id: ");
         idCustomer = Integer.parseInt(scanner.nextLine());
         for (Customer customer : customerLinkedList) {
-            if (customer.getIdFurama() != idCustomer) {
+            if (customer.getIdFurama() == idCustomer) {
                 flag = false;
                 break;
             }
@@ -61,6 +63,8 @@ public class CustomerServiceImpl implements ICustomerService {
             System.out.println("Enter address");
             address = scanner.nextLine();
             customerLinkedList.add(new Customer(idCustomer, name, birthDay, gender, id, phone, mail, typeOfMember, address));
+            customerRepository.add(customerLinkedList);
+            System.out.println("Added");
         }
         else {
             System.out.println("ID exist");
@@ -69,6 +73,7 @@ public class CustomerServiceImpl implements ICustomerService {
 
     @Override
     public void edit() {
+        customerLinkedList = ReadAndWriteCustomer.read();
         String name, birthDay, gender, address, typeOfMember, mail;
         int id, phone, idCustomer;
         int count = 0;
@@ -98,6 +103,7 @@ public class CustomerServiceImpl implements ICustomerService {
                 System.out.println("Enter address");
                 address = scanner.nextLine();
                 customerLinkedList.get(i).setAddress(address);
+                customerRepository.edit(customerLinkedList);
                 System.out.println("changed");
                 break;
             }

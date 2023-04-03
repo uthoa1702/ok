@@ -53,7 +53,7 @@ public class Employee extends Person {
                 ", id=" + id +
                 ", phoneNum=" + phoneNum +
                 ", email='" + email + '\'' +
-                '}';
+                '}' + '\n';
     }
     public String getAll() {
         return idFurama+","+name+","+birthday+","+gender+","+id+","+email+","+phoneNum+","+ability+","+position+","+salary;

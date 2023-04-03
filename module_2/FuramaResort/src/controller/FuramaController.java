@@ -31,7 +31,6 @@ public class FuramaController {
                         "\n 6.Exit");
                 System.out.println("Type here:");
                 int choose = Integer.parseInt(sc.nextLine());
-
                 switch (choose) {
                     case 1:
                         employeeManagement();
