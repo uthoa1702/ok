@@ -119,16 +119,17 @@ public class CustomerServiceImpl implements ICustomerService {
     public static String typeOfMember() {
         String type = null;
 
-        System.out.println("Type of member: \n" +
-                "1. Diamond\n" +
-                "2. Platinum\n" +
-                "3. Gold\n" +
-                "4. Silver\n" +
-                "5. Member");
-        int choose = Integer.parseInt(scanner.nextLine());
+
         boolean flag;
         do {
             flag = true;
+            System.out.println("Type of member: \n" +
+                    "1. Diamond\n" +
+                    "2. Platinum\n" +
+                    "3. Gold\n" +
+                    "4. Silver\n" +
+                    "5. Member");
+            int choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
                     type = typeOfCustomer.get(0);

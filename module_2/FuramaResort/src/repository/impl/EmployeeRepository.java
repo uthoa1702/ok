@@ -2,10 +2,8 @@ package repository.impl;
 
 import model.person.Employee;
 import repository.IEmployeeRepository;
-import util.read_and_write.ReadAndWrite;
 import util.read_and_write.ReadAndWriteEmployee;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -20,7 +18,7 @@ public class EmployeeRepository implements IEmployeeRepository {
         List<Employee> employeeList = ReadAndWriteEmployee.read();
         for (Employee s :
                 employeeList) {
-            System.out.println(s.toString());
+            System.out.println(s.getAll());
         }
     }
 

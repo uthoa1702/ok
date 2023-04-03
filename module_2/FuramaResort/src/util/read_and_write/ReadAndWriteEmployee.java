@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteEmployee {
-    static final String PATH_EMPLOYEE = "D:\\code_Gym\\ok\\module_2\\FuramaResort\\src\\data\\employee.csv";
+    static final String PATH_EMPLOYEE = "C:\\Users\\AD\\Documents\\GitHub\\ok\\module_2\\FuramaResort\\src\\data\\employee.csv";
 
     public static List<Employee> read() {
 

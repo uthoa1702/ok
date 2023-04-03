@@ -41,6 +41,6 @@ public class Customer extends Person{
                 '}';
     }
     public String getAll() {
-        return idFurama+","+name+","+birthday+","+gender+","+id+","+address+","+email+","+phoneNum+","+typeOfCustomer;
+        return idFurama+","+name+","+birthday+","+gender+","+id+","+phoneNum+","+email+","+typeOfCustomer+","+address;
     }
 }

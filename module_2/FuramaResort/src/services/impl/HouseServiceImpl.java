@@ -1,14 +1,16 @@
 package services.impl;
 
 import model.furama_facility.House;
+import repository.impl.HouseRepository;
 import services.IHouseService;
+import util.read_and_write.ReadAndWriteHouse;
 import util.validate.Validate;
 
 import java.util.*;
 
 public class HouseServiceImpl implements IHouseService {
     static Scanner scanner = new Scanner(System.in);
-    static LinkedHashMap<House, Integer> houseIntegerLinkedHashMap = new LinkedHashMap<>();
+    static LinkedHashMap<House, Integer> houseIntegerLinkedHashMap = ReadAndWriteHouse.read();
     static List<String> typeOfRentList = new ArrayList<>();
 
     static {
@@ -32,24 +34,23 @@ public class HouseServiceImpl implements IHouseService {
 
     static final String REGEX_HOUSE_ID = "^(SVHO)(-)[0-9]{4}$";
     static final String REGEX_HOUSE_SERVICE_NAME = "^[A-Z][a-z]*$";
+    HouseRepository houseRepository = new HouseRepository();
 
     @Override
     public void display() {
-        for (House h :
-                houseIntegerLinkedHashMap.keySet()) {
-            System.out.println(h.getAll() + " ,used time: " + houseIntegerLinkedHashMap.get(h));
-        }
+        houseRepository.display();
     }
 
     @Override
     public void add() {
+
         String id, serviceName, type, roomStandard;
         int area, price, maxPeo, floor;
         boolean flag = true;
         boolean check;
 
         do {
-
+            houseIntegerLinkedHashMap = ReadAndWriteHouse.read();
             System.out.println("Enter id:");
             System.out.println("Example: SVHO-YYYY ");
             id = scanner.nextLine();
@@ -84,6 +85,7 @@ public class HouseServiceImpl implements IHouseService {
                             roomStandard = chooseRoomStandard();
                             floor = Validate.checkFloor();
                             houseIntegerLinkedHashMap.put(new House(id, serviceName, area, price, maxPeo, type, roomStandard, floor), 0);
+                            houseRepository.add(houseIntegerLinkedHashMap);
                             System.out.println("added");
                             flagServiceName = false;
                             flagArea = false;

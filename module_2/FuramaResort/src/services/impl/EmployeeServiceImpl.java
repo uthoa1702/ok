@@ -3,8 +3,6 @@ package services.impl;
 import model.person.Employee;
 import repository.impl.EmployeeRepository;
 import services.IEmployeeService;
-import util.read_and_write.ReadAndWrite;
-import util.read_and_write.ReadAndWriteCustomer;
 import util.read_and_write.ReadAndWriteEmployee;
 import util.validate.Validate;
 

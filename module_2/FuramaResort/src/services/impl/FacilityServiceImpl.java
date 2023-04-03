@@ -2,6 +2,7 @@ package services.impl;
 
 
 
+import repository.impl.HouseRepository;
 import services.IFacilityService;
 import services.IHouseService;
 import services.IRoomService;
@@ -14,6 +15,7 @@ public class FacilityServiceImpl implements IFacilityService {
     IHouseService houseService = new HouseServiceImpl();
     IVillaService villaService =  new VillaServiceImpl();
     IRoomService roomService = new RoomServiceImpl();
+    HouseRepository houseRepository =new HouseRepository();
 
 
     @Override
@@ -24,6 +26,7 @@ public class FacilityServiceImpl implements IFacilityService {
         roomService.display();
         System.out.println("----Villa list----");
         villaService.display();
+
 
     }
 

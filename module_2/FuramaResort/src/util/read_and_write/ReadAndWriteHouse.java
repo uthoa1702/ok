@@ -4,9 +4,10 @@ import model.furama_facility.House;
 
 import java.io.*;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class ReadAndWriteHouse {
-    static final String PATH_HOUSE = "D:\\code_Gym\\ok\\module_2\\FuramaResort\\src\\data\\house.csv";
+    static final String PATH_HOUSE = "C:\\Users\\AD\\Documents\\GitHub\\ok\\module_2\\FuramaResort\\src\\data\\house.csv";
 
     public static LinkedHashMap<House, Integer> read() {
         LinkedHashMap<House, Integer> houseIntegerLinkedHashMap = new LinkedHashMap<>();
@@ -39,9 +40,9 @@ public class ReadAndWriteHouse {
             fileWriter = new FileWriter(file);
             bufferedWriter = new BufferedWriter(fileWriter);
             String line = "";
-            for (House h :
-                    houseIntegerLinkedHashMap.keySet()) {
-                bufferedWriter.write(h.getAll() + houseIntegerLinkedHashMap.get(h));
+            for (Map.Entry<House,Integer> h :
+                    houseIntegerLinkedHashMap.entrySet()) {
+                bufferedWriter.write(h.getKey().getAll()+","+h.getValue());
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();

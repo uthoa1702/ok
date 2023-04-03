@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ReadAndWriteCustomer {
-    static final String PATH_CUSTOMER = "D:\\code_Gym\\ok\\module_2\\FuramaResort\\src\\data\\customer.csv";
+    static final String PATH_CUSTOMER = "C:\\Users\\AD\\Documents\\GitHub\\ok\\module_2\\FuramaResort\\src\\data\\customer.csv";
 
     public static LinkedList<Customer> read() {
         LinkedList<Customer> customerList = new LinkedList<>();

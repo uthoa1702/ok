@@ -1,6 +1,11 @@
 package repository;
 
+import model.furama_facility.House;
+
+import java.util.LinkedHashMap;
+
 public interface IHouseRepository {
-    void readHouseFile();
-    void writeHouseFile();
+    void display();
+    void add(LinkedHashMap<House,Integer> houseIntegerLinkedHashMap);
+
 }

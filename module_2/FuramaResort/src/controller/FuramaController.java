@@ -61,6 +61,7 @@ public class FuramaController {
 
     public static void employeeManagement() {
         boolean flag;
+        int option;
         do {
             flag = true;
             System.out.println("1. Display list of employees\n" +
@@ -68,7 +69,7 @@ public class FuramaController {
                     "3. Edit employee\n" +
                     "4. Return main menu");
             try {
-                int option = Integer.parseInt(sc.nextLine());
+                 option = Integer.parseInt(sc.nextLine());
                 switch (option) {
                     case 1:
                         employeeService.display();
