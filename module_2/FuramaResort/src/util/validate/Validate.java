@@ -7,7 +7,8 @@ public class Validate {
     static final String REGEX_SERVICE_NAME = "^[A-Z][a-z]*$";
     static final String REGEX_ROOM_ID = "^(SVRO)(-)[0-9]{4}$";
     static final String REGEX_VILLA_ID = "^(SVVL)(-)[0-9]{4}$";
-    static final String REGEX_BIRTHDAY = "^(([0-2][0-9])||3[0-1])\\/(([0][0-9])||1[0-2])\\/((19((2[4-9])||([3-9][0-9])))||200[0-5])$";
+    static final String REGEX_BIRTHDAY = "^((0[1-9])|((1|2)[0-9])|3[0-1])\\/((0[1-9])|1[0-2])\\/((19((2[4-9])|([3-9][0-9])))|200[0-5])$";
+    static final String REGEX_DATE = "^(0[1-9]|[12][0-9]|3[01])(/)(0[1-9]|1[012])(/)(2[0-9]{3})$";
 
     public static int checkPrice() {
         boolean flag;
@@ -89,14 +90,14 @@ public class Validate {
         return name;
     }
 
-    public static int checkArea() {
+    public static double checkArea() {
         boolean check;
-        int area;
+        double area;
 
         do {
             check = true;
             System.out.println("Enter area: ");
-            area = Integer.parseInt(scanner.nextLine());
+            area = Double.parseDouble(scanner.nextLine());
             if (area > 30) {
                 check = false;
             }
@@ -113,6 +114,30 @@ public class Validate {
             check = birth.matches(REGEX_BIRTHDAY);
         } while (!check);
         return birth;
+    }
+
+    public static String checkStartDate() {
+        boolean flag;
+        String start;
+        do {
+            System.out.println("Enter start date: ");
+             start = scanner.nextLine();
+            flag = start.matches(REGEX_DATE);
+
+        } while (!flag);
+        return start;
+    }
+
+    public static String checkEndDate() {
+        boolean flag;
+        String end;
+        do {
+            System.out.println("Enter end date: ");
+            end = scanner.nextLine();
+            flag = end.matches(REGEX_DATE);
+
+        } while (!flag);
+        return end;
     }
 
 

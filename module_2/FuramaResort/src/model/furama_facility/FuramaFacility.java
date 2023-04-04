@@ -1,7 +1,5 @@
 package model.furama_facility;
 
-import java.util.Objects;
-
 public abstract class FuramaFacility {
     protected String id;
     protected String serviceName;
@@ -14,7 +12,7 @@ public abstract class FuramaFacility {
     }
 
 
-    public FuramaFacility(String id, String serviceName, int useableArea, int price, int maxNumOfPeo, String typeOfRent) {
+    public FuramaFacility(String id, String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent) {
         this.serviceName = serviceName;
         this.useableArea = useableArea;
         this.price = price;
@@ -47,7 +45,7 @@ public abstract class FuramaFacility {
         return (int) useableArea;
     }
 
-    public void setUseableArea(int useableArea) {
+    public void setUseableArea(double useableArea) {
         this.useableArea = useableArea;
     }
 

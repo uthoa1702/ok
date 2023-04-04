@@ -9,7 +9,7 @@ public class House extends FuramaFacility {
         this.numOfLevel = numOfLevel;
     }
 
-    public House(String id,String serviceName, int useableArea, int price, int maxNumOfPeo, String typeOfRent, String roomStandard, int numOfLevel) {
+    public House(String id, String serviceName, double useableArea, int price, int maxNumOfPeo, String typeOfRent, String roomStandard, int numOfLevel) {
         super(id,serviceName,  useableArea, price, maxNumOfPeo, typeOfRent);
         this.roomStandard = roomStandard;
         this.numOfLevel = numOfLevel;

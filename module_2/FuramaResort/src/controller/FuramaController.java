@@ -1,11 +1,9 @@
 package controller;
+import services.IBookingService;
 import services.ICustomerService;
 import services.IEmployeeService;
 import services.IFacilityService;
-import services.impl.CustomerServiceImpl;
-import services.impl.EmployeeServiceImpl;
-import services.impl.FacilityServiceImpl;
-import services.impl.HouseServiceImpl;
+import services.impl.*;
 
 import java.util.Scanner;
 
@@ -14,6 +12,7 @@ public class FuramaController {
     static IEmployeeService employeeService = new EmployeeServiceImpl();
     static ICustomerService customerService = new CustomerServiceImpl();
     static IFacilityService facilityService = new FacilityServiceImpl();
+    static IBookingService bookingService =new BookingServiceImpl();
 
     public static void displayMainMenu() {
 
@@ -180,8 +179,10 @@ public class FuramaController {
 
                 switch (option) {
                     case 1:
+                        bookingService.add();
                         break;
                     case 2:
+                        bookingService.display();
                         break;
                     case 3:
                         break;

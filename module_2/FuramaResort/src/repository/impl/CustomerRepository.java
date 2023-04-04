@@ -5,6 +5,7 @@ import repository.ICustomerRepository;
 import util.read_and_write.ReadAndWriteCustomer;
 
 
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 
@@ -28,5 +29,10 @@ public class CustomerRepository implements ICustomerRepository {
     public void edit(LinkedList<Customer> customerList) {
         ReadAndWriteCustomer.write(customerList,false);
 
+    }
+
+    public static LinkedList<Customer> getCustomerList(){
+        LinkedList<Customer> customerLinkedList = ReadAndWriteCustomer.read();
+        return customerLinkedList;
     }
 }

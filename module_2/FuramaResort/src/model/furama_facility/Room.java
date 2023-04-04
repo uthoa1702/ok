@@ -7,7 +7,7 @@ public class Room extends FuramaFacility {
         this.freeServiceIncluded = freeServiceIncluded;
     }
 
-    public Room(String id,String serviceName, int usableArea, int price, int maxNumOfPeo, String typeOfRent, String freeServiceIncluded) {
+    public Room(String id, String serviceName, double usableArea, int price, int maxNumOfPeo, String typeOfRent, String freeServiceIncluded) {
         super(id,serviceName, usableArea, price, maxNumOfPeo, typeOfRent);
         this.freeServiceIncluded = freeServiceIncluded;
     }

@@ -10,7 +10,7 @@ import java.util.*;
 
 public class HouseServiceImpl implements IHouseService {
     static Scanner scanner = new Scanner(System.in);
-    static LinkedHashMap<House, Integer> houseIntegerLinkedHashMap = ReadAndWriteHouse.read();
+    static LinkedHashMap<House, Integer> houseIntegerLinkedHashMap = new LinkedHashMap<>();
     static List<String> typeOfRentList = new ArrayList<>();
 
     static {
@@ -26,12 +26,6 @@ public class HouseServiceImpl implements IHouseService {
             "Executive"};
 
 
-    static {
-        houseIntegerLinkedHashMap.put(new House("1", "1", 1, 1, 1, "1", "1", 1), 5);
-
-
-    }
-
     static final String REGEX_HOUSE_ID = "^(SVHO)(-)[0-9]{4}$";
     static final String REGEX_HOUSE_SERVICE_NAME = "^[A-Z][a-z]*$";
     HouseRepository houseRepository = new HouseRepository();
@@ -45,12 +39,14 @@ public class HouseServiceImpl implements IHouseService {
     public void add() {
 
         String id, serviceName, type, roomStandard;
-        int area, price, maxPeo, floor;
+        int  price, maxPeo, floor;
+        double area;
         boolean flag = true;
         boolean check;
+        houseIntegerLinkedHashMap = ReadAndWriteHouse.read();
 
         do {
-            houseIntegerLinkedHashMap = ReadAndWriteHouse.read();
+
             System.out.println("Enter id:");
             System.out.println("Example: SVHO-YYYY ");
             id = scanner.nextLine();
@@ -74,7 +70,7 @@ public class HouseServiceImpl implements IHouseService {
                     boolean flagArea;
                     do {
                         System.out.println("Enter usable area: ");
-                        area = Integer.parseInt(scanner.nextLine());
+                        area = Double.parseDouble(scanner.nextLine());
                         flagArea = true;
                         if (area > 30) {
                             price = Validate.checkPrice();
@@ -107,8 +103,9 @@ public class HouseServiceImpl implements IHouseService {
     @Override
     public void edit() {
         String id, serviceName, type, roomStandard;
-        int area, price, maxPeo, floor;
+        int  price, maxPeo, floor;
         int count = 0;
+        double area;
         System.out.println("Enter ID to edit: ");
         id = scanner.nextLine();
         for (House h : houseIntegerLinkedHashMap.keySet()) {
@@ -117,7 +114,7 @@ public class HouseServiceImpl implements IHouseService {
                 serviceName = scanner.nextLine();
                 h.setServiceName(serviceName);
                 System.out.println("Enter usable area: ");
-                area = Integer.parseInt(scanner.nextLine());
+                area = Double.parseDouble(scanner.nextLine());
                 h.setUseableArea(area);
                 System.out.println("Enter price: ");
                 price = Integer.parseInt(scanner.nextLine());
@@ -214,6 +211,7 @@ public class HouseServiceImpl implements IHouseService {
     }
 
     public static void displayMaintenance() {
+        houseIntegerLinkedHashMap = ReadAndWriteHouse.read();
         for (House h :
                 houseIntegerLinkedHashMap.keySet()) {
             if (houseIntegerLinkedHashMap.get(h) > 4) {

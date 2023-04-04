@@ -2,13 +2,13 @@ package model.booking;
 
 public class Booking {
     protected int bookingId;
-    protected int startDate;
-    protected int endDate;
+    protected String startDate;
+    protected String endDate;
     protected int customerId;
     protected String serviceName;
     protected String serviceType;
 
-    public Booking(int bookingId, int startDate, int endDate, int customerId, String serviceName, String serviceType) {
+    public Booking(int bookingId, String startDate, String endDate, int customerId, String serviceName, String serviceType) {
         this.bookingId = bookingId;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -28,19 +28,19 @@ public class Booking {
         this.bookingId = bookingId;
     }
 
-    public int getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(int startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public int getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(int endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 

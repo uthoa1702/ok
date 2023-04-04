@@ -1,8 +1,9 @@
 package services.impl;
 
-import model.furama_facility.House;
 import model.furama_facility.Villa;
+import repository.impl.VillaRepository;
 import services.IVillaService;
+import util.read_and_write.ReadAndWriteVilla;
 import util.validate.Validate;
 
 import java.util.LinkedHashMap;
@@ -15,27 +16,23 @@ import static services.impl.HouseServiceImpl.chooseTypeOfRent;
 public class VillaServiceImpl implements IVillaService {
     static Scanner scanner = new Scanner(System.in);
     static LinkedHashMap<Villa, Integer> villaIntegerLinkedHashMap = new LinkedHashMap<>();
-
-    static {
-        villaIntegerLinkedHashMap.put(new Villa("1", "villa101", 50, 20, 20, "year", "Deluxe", 10, 2), 0);
-        villaIntegerLinkedHashMap.put(new Villa("2", "villa102", 50, 20, 20, "day", "Executive", 10, 2), 0);
-    }
+    static VillaRepository villaRepository = new VillaRepository();
 
     @Override
     public void display() {
-        for (Villa v :
-                villaIntegerLinkedHashMap.keySet()) {
-            System.out.println(v.getAll() + " ,used time: " + villaIntegerLinkedHashMap.get(v));
-        }
+        villaIntegerLinkedHashMap = ReadAndWriteVilla.read();
+        villaRepository.display();
     }
 
     @Override
     public void add() {
+        villaIntegerLinkedHashMap = ReadAndWriteVilla.read();
         String id, serviceName, type, roomStandard;
-        int area, price, maxPeo, floor, poolArea;
+        int  price, maxPeo, floor, poolArea;
+        double area;
         boolean flag = true;
         System.out.println("Enter id:");
-        id = scanner.nextLine();
+        id = Validate.checkVillaID();
         for (Villa h : villaIntegerLinkedHashMap.keySet()) {
             if (Objects.equals(h.getId(), id)) {
                 flag = false;
@@ -55,6 +52,7 @@ public class VillaServiceImpl implements IVillaService {
             System.out.println("Enter pool area:");
             poolArea = Integer.parseInt(scanner.nextLine());
             villaIntegerLinkedHashMap.put(new Villa(id, serviceName, area, price, maxPeo, type, roomStandard, poolArea, floor), 0);
+            villaRepository.add(villaIntegerLinkedHashMap);
             System.out.println("added");
         } else {
             System.out.println("ID exists");
@@ -67,6 +65,7 @@ public class VillaServiceImpl implements IVillaService {
     }
 
     public static void displayMaintenance() {
+        villaIntegerLinkedHashMap = ReadAndWriteVilla.read();
         for (Villa h :
                 villaIntegerLinkedHashMap.keySet()) {
             if (villaIntegerLinkedHashMap.get(h) > 4) {

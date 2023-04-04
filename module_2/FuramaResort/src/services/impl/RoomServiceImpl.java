@@ -3,7 +3,10 @@ package services.impl;
 
 import model.furama_facility.House;
 import model.furama_facility.Room;
+import repository.IRoomRepository;
+import repository.impl.RoomRepository;
 import services.IRoomService;
+import util.read_and_write.ReadAndWriteRoom;
 import util.validate.Validate;
 
 import java.util.LinkedHashMap;
@@ -16,25 +19,20 @@ import static services.impl.HouseServiceImpl.roomStandard;
 
 public class RoomServiceImpl implements IRoomService {
     static LinkedHashMap<Room,Integer> roomIntegerLinkedHashMap = new LinkedHashMap<>();
-    static {
-        roomIntegerLinkedHashMap.put(new Room("1","asd",10,1000,20,"year","asd"),1);
-        roomIntegerLinkedHashMap.put(new Room("2","asd",10,1000,20,"year","asd"),5);
-        roomIntegerLinkedHashMap.put(new Room("3","asd",10,1000,20,"year","asd"),1);
-        roomIntegerLinkedHashMap.put(new Room("4","asd",10,1000,20,"year","asd"),6);
-    }
+
     static Scanner scanner = new Scanner(System.in);
+    static IRoomRepository roomRepository = new RoomRepository();
     @Override
     public void display() {
-        for (Room r :
-                roomIntegerLinkedHashMap.keySet()) {
-            System.out.println(r.getAll()+ ", used time:"+ roomIntegerLinkedHashMap.get(r));
-        }
+       roomRepository.display();
     }
 
     @Override
     public void add() {
+        roomIntegerLinkedHashMap = ReadAndWriteRoom.read();
         String id, serviceName, type ;
-        int area, price, maxPeo;
+        int  price, maxPeo;
+        double area;
 
         boolean flag = true;
 
@@ -56,6 +54,7 @@ public class RoomServiceImpl implements IRoomService {
             System.out.println("Enter free service included:");
             String free = scanner.nextLine();
             roomIntegerLinkedHashMap.put(new Room(id, serviceName, area, price, maxPeo, type,free), 0);
+            roomRepository.add(roomIntegerLinkedHashMap);
             System.out.println("added");
         } else {
             System.out.println("ID exists");
@@ -69,6 +68,7 @@ public class RoomServiceImpl implements IRoomService {
 
     }
     public static void displayMaintenance() {
+        roomIntegerLinkedHashMap = ReadAndWriteRoom.read();
         for (Room h :
                 roomIntegerLinkedHashMap.keySet()) {
             if (roomIntegerLinkedHashMap.get(h)>4){
