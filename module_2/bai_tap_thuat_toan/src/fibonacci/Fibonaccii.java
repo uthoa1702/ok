@@ -1,35 +1,43 @@
 package fibonacci;
 
-public class Fibonacci {
+public class Fibonaccii {
     public static void main(String[] args) {
         int a = 0, b = 1, c;
-        System.out.print(a + " " + b);
+        int sum = 0;
+
+
         for (int i = 0; i <= 100; i++) {
             c = a + b;
-            if (c >= 100){
+            if (c >= 100) {
                 break;
             }
-            System.out.print(" " + c);
+            if (isPrime(c)){
+                sum = sum +c;
+                System.out.print(" " + c + " ");
+
+            }
             a = b;
             b = c;
+
         }
-
-
+        System.out.println("");
+        System.out.println(sum);
     }
+
     public static boolean isPrime(int n) {
-        if (n<2){
+        if (n < 2) {
             return false;
         }
-        int count= 0;
+        int count = 0;
         for (int i = 2; i <= n; i++) {
-            if (n%i==0){
+            if (n % i == 0) {
                 count++;
             }
         }
-        if (count ==1) {
+        if (count == 1) {
             return true;
-
+        } else {
+            return false;
         }
-        else {return false;}
     }
 }
