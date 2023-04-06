@@ -23,7 +23,7 @@ public class CountChar {
         String b = scanner.nextLine();
         for (String a: map.keySet()) {
             if (Objects.equals(b, a)) {
-                System.out.println("ky tu " + a+ " xuat hien " + map.get(a));
+                System.out.println("ky tu " + a+ " xuat hien " + map.get(a)+ " lan");
             }
 
         }
